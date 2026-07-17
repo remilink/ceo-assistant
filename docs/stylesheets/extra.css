@@ -117,9 +117,11 @@
 .md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link {
   color: var(--rl-muted);
   font-weight: 700;
-  font-size: .64rem;
-  letter-spacing: .08em;
+  font-size: .62rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
+  margin-bottom: .3rem;
+  padding-left: .6rem;
 }
 .md-nav__link--active,
 .md-nav__link:focus,
@@ -250,9 +252,21 @@
 .md-header { box-shadow: none; border-bottom: 1px solid var(--rl-hairline); }
 .md-header__title { font-size: .82rem; font-weight: 700; letter-spacing: -.01em; }
 .md-header__source { display: none; }
-/* Remove the logo mark — the wordmark stays (once, in the header) */
-.md-header__button.md-logo,
-.md-nav__button.md-logo { display: none; }
+/* Remilink brand mark in the logo slot (links home) */
+.rl-brand {
+  font-family: var(--rl-font-display);
+  font-weight: 700;
+  font-size: .86rem;
+  letter-spacing: -.01em;
+  color: var(--rl-accent);
+}
+.md-header__button.md-logo { padding: 0; margin-right: 0; }
+/* Divider between the Remilink brand and the product name */
+.md-header__title {
+  border-left: 1px solid var(--rl-hairline);
+  margin-left: .6rem;
+  padding-left: .7rem;
+}
 /* Do not repeat the site name in the sidebar on desktop */
 @media screen and (min-width: 76.25em) {
   .md-nav--primary > .md-nav__title { display: none; }
@@ -269,20 +283,23 @@
 @media screen and (min-width: 76.25em) {
   .md-sidebar--primary { border-right: 1px solid var(--rl-hairline); }
 }
-.md-nav--primary > .md-nav__list > .md-nav__item--section { margin-top: 1.2rem; }
-.md-nav--primary > .md-nav__list > .md-nav__item--section:first-child { margin-top: .3rem; }
+.md-nav--primary > .md-nav__list > .md-nav__item--section { margin-top: 1.5rem; }
+.md-nav--primary > .md-nav__list > .md-nav__item--section:first-child { margin-top: .35rem; }
 a.md-nav__link {
   border-radius: 8px;
-  padding: .34rem .55rem;
-  margin: .06rem 0;
-  transition: background .12s ease, color .12s ease;
+  padding: .36rem .6rem;
+  margin: .07rem 0;
+  line-height: 1.35;
+  color: var(--md-default-fg-color--light);
+  transition: background .12s ease, color .12s ease, box-shadow .12s ease;
 }
 a.md-nav__link:hover {
-  background: color-mix(in srgb, var(--rl-accent) 8%, transparent);
+  background: color-mix(in srgb, var(--rl-accent) 7%, transparent);
   color: var(--rl-accent);
 }
 a.md-nav__link.md-nav__link--active {
-  background: color-mix(in srgb, var(--rl-accent) 12%, transparent);
+  background: color-mix(in srgb, var(--rl-accent) 11%, transparent);
+  box-shadow: inset 3px 0 0 var(--rl-accent);
   color: var(--rl-accent);
   font-weight: 600;
 }
