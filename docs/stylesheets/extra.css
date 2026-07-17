@@ -1,94 +1,224 @@
-/* ── Remilink brand: monochrome, near-black #09090b, near-white #fafafa ── */
+/* ===================================================================
+   Remilink · CEO-assistant handbook
+   Light-first editorial theme (GitBook-grade), dark brand toggle.
+   Signature: the bracket [ ] mark in a black header over warm paper.
+   =================================================================== */
 
 :root {
-  --rl-black: #09090b;
-  --rl-white: #fafafa;
-  --rl-zinc-900: #131316;
-  --rl-zinc-800: #27272a;
-  --rl-zinc-700: #3f3f46;
-  --rl-zinc-300: #d4d4d8;
-  --rl-zinc-200: #e4e4e7;
-  --md-primary-fg-color: var(--rl-black);
-  --md-primary-bg-color: var(--rl-white);
+  --rl-font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
 }
 
-/* Dark scheme (default, matches production brand) */
+/* ---- Light (default): warm paper, ink text, deep-navy accent ---- */
+[data-md-color-scheme="default"] {
+  --rl-paper:      #FBFAF9;
+  --rl-surface:    #FFFFFF;
+  --rl-ink:        #1A1A1E;
+  --rl-muted:      #6A6A73;
+  --rl-hairline:   #EBE8E3;
+  --rl-hairline-2: #DED9D1;
+  --rl-accent:     #233876;
+  --rl-accent-2:   #1A2B5C;
+  --rl-code-bg:    #F5F3EF;
+
+  --md-default-bg-color:        var(--rl-paper);
+  --md-default-fg-color:        #26262B;
+  --md-default-fg-color--light: #6A6A73;
+  --md-default-fg-color--lighter:#9A9AA2;
+  --md-typeset-color:           #2A2A30;
+  --md-typeset-a-color:         var(--rl-accent);
+  --md-accent-fg-color:         var(--rl-accent-2);
+  --md-code-bg-color:           var(--rl-code-bg);
+  --md-code-fg-color:           #34343B;
+  --md-primary-fg-color:        #0B0B0D;
+  --md-primary-bg-color:        #FAFAFA;
+}
+
+/* ---- Dark (slate): Remilink night ---- */
 [data-md-color-scheme="slate"] {
   --md-hue: 240;
-  --md-default-bg-color: var(--rl-black);
-  --md-default-fg-color: var(--rl-zinc-200);
-  --md-default-fg-color--light: #a1a1aa;
-  --md-default-fg-color--lighter: #52525b;
-  --md-typeset-color: var(--rl-zinc-300);
-  --md-typeset-a-color: var(--rl-white);
-  --md-accent-fg-color: #ffffff;
-  --md-code-bg-color: var(--rl-zinc-900);
-  --md-code-fg-color: var(--rl-zinc-200);
-  --md-footer-bg-color: var(--rl-black);
-  --md-footer-bg-color--dark: #050506;
+  --rl-paper:      #0B0B0D;
+  --rl-surface:    #141417;
+  --rl-ink:        #EDEDEF;
+  --rl-muted:      #9A9AA2;
+  --rl-hairline:   #26262B;
+  --rl-hairline-2: #33333A;
+  --rl-accent:     #A9B8FF;
+  --rl-accent-2:   #C7D2FF;
+  --rl-code-bg:    #141417;
+
+  --md-default-bg-color:        var(--rl-paper);
+  --md-default-fg-color:        #E4E4E7;
+  --md-default-fg-color--light: #9A9AA2;
+  --md-default-fg-color--lighter:#52525B;
+  --md-typeset-color:           #D4D4D8;
+  --md-typeset-a-color:         var(--rl-accent);
+  --md-accent-fg-color:         var(--rl-accent-2);
+  --md-code-bg-color:           var(--rl-code-bg);
+  --md-code-fg-color:           #E4E4E7;
+  --md-primary-fg-color:        #0B0B0D;
+  --md-primary-bg-color:        #FAFAFA;
+  --md-footer-bg-color:         #0B0B0D;
+  --md-footer-bg-color--dark:   #070708;
 }
 
-/* Header + footer stay black in both schemes */
-.md-header,
-.md-footer { background-color: var(--rl-black); }
-.md-tabs { background-color: var(--rl-black); }
+/* Header + footer: always the black brand chrome, in both schemes */
+.md-header { background: #0B0B0D; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+.md-footer { background: #0B0B0D; }
+.md-header__title { font-family: var(--rl-font-display); font-weight: 600; }
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg { height: 1.5rem; width: auto; }
 
-/* Links: monochrome, always distinguishable via underline */
-.md-typeset a {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-  text-decoration-color: var(--rl-zinc-700);
-  transition: text-decoration-color 120ms ease;
-}
-.md-typeset a:hover { text-decoration-color: currentColor; }
-
-/* Typography */
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3 { letter-spacing: -0.01em; }
-.md-typeset { font-size: 0.82rem; }
-
-/* Scenario cards: collapsible admonitions as a clean gallery */
-.md-typeset .admonition,
-.md-typeset details {
-  border: 1px solid var(--rl-zinc-800);
-  border-left-width: 1px;
-  border-radius: 10px;
-  box-shadow: none;
-  font-size: 0.78rem;
-}
-[data-md-color-scheme="slate"] .md-typeset details { background: #0e0e11; }
-.md-typeset details > summary {
+/* ---- Typography ---- */
+.md-typeset { font-size: .85rem; line-height: 1.75; }
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+  font-family: var(--rl-font-display);
   font-weight: 600;
-  font-size: 0.9rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  letter-spacing: -.01em;
+  color: var(--rl-ink);
 }
-.md-typeset details > summary::before { background-color: currentColor; }
-.md-typeset details[open] > summary { border-bottom: 1px solid var(--rl-zinc-800); }
+.md-typeset h1 {
+  font-size: 2.05rem; font-weight: 700; letter-spacing: -.025em;
+  margin: .2rem 0 1.3rem; line-height: 1.15;
+}
+.md-typeset h2 {
+  font-size: 1.4rem; margin-top: 2.6rem; padding-bottom: .45rem;
+  border-bottom: 1px solid var(--rl-hairline);
+}
+.md-typeset h3 { font-size: 1.1rem; margin-top: 1.7rem; }
+.md-typeset p, .md-typeset li { color: var(--md-typeset-color); }
 
-/* Connector chips (rendered from inline `code`) */
+/* Links: colored, underline only on hover (GitBook style) */
+.md-typeset a { text-decoration: none; }
+.md-typeset a:hover { text-decoration: underline; text-underline-offset: .18em; }
+
+/* ---- Sidebar nav: quiet, grouped, GitBook-like ---- */
+.md-nav { font-size: .74rem; }
+.md-nav__title { color: var(--rl-muted); }
+.md-sidebar--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link {
+  color: var(--rl-muted);
+  font-weight: 700;
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.md-nav__link--active,
+.md-nav__link:focus,
+.md-nav__link:hover { color: var(--rl-accent); }
+.md-nav__link--active { font-weight: 600; }
+
+/* ---- Connector chips (inline code) ---- */
 .md-typeset code {
-  border-radius: 6px;
-  padding: 0.05em 0.4em;
-  font-size: 0.85em;
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--rl-hairline);
+  border-radius: 7px;
+  padding: .08em .45em;
+  font-size: .82em;
 }
 
-/* Copy button always a touch visible so it reads as "copy the prompt" */
-.md-typeset .md-clipboard { color: var(--rl-zinc-700); }
-.md-typeset :hover > .md-clipboard { color: var(--rl-zinc-300); }
-.md-clipboard:hover { color: var(--rl-white) !important; }
+/* ---- Prompt block: calm light panel, not a terminal ---- */
+.md-typeset .highlight {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--rl-hairline);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.md-typeset .highlight pre,
+.md-typeset .highlight code { background: transparent; }
+.md-typeset pre > code {
+  padding: 1rem 1.15rem; font-size: .78rem; line-height: 1.65;
+  white-space: pre-wrap;      /* prompts wrap instead of scrolling — читабельніше */
+  overflow-wrap: anywhere;
+}
+.md-typeset .md-clipboard { color: var(--rl-muted); }
+.md-typeset .md-clipboard:hover { color: var(--rl-accent); }
 
-/* Screenshots: framed, click-to-zoom (glightbox) */
+/* ---- Collapsible scenario cards: clean expandable panels ---- */
+.md-typeset details {
+  border: 1px solid var(--rl-hairline);
+  border-radius: 14px;
+  background: var(--rl-surface);
+  box-shadow: 0 1px 2px rgba(16,16,20,.03);
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.md-typeset details:hover { box-shadow: 0 10px 30px rgba(16,16,20,.08); border-color: var(--rl-hairline-2); }
+[data-md-color-scheme="slate"] .md-typeset details { box-shadow: none; }
+[data-md-color-scheme="slate"] .md-typeset details:hover { box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+/* Neutralize Material's coloured "tip" flavour so cards read as plain panels */
+.md-typeset details.tip,
+.md-typeset details.note {
+  border-color: var(--rl-hairline);
+  background: var(--rl-surface);
+}
+.md-typeset details.tip > summary,
+.md-typeset details.note > summary,
+.md-typeset details > summary {
+  font-family: var(--rl-font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--rl-ink);
+  background: var(--rl-surface);
+  padding: .95rem 2.4rem .95rem 1.1rem;
+}
+/* Hide the built-in admonition icon — the emoji in the title is the icon */
+.md-typeset details.tip > summary::before,
+.md-typeset details.note > summary::before,
+.md-typeset details > summary::before { display: none; }
+.md-typeset details > summary:hover { color: var(--rl-accent); }
+.md-typeset details[open] > summary { border-bottom: 1px solid var(--rl-hairline); }
+.md-typeset details > summary::after { color: var(--rl-muted); }
+
+/* ---- Static callouts (note/tip that are NOT collapsible) ---- */
+.md-typeset > div.admonition {
+  border: 1px solid var(--rl-hairline);
+  border-left: 3px solid var(--rl-accent);
+  border-radius: 12px;
+  background: var(--rl-surface);
+  box-shadow: none;
+}
+.md-typeset > div.admonition > .admonition-title { background: transparent; font-weight: 600; }
+.md-typeset > div.admonition > .admonition-title::before { background-color: var(--rl-accent); }
+
+/* ---- Blockquotes (tips in Quick start) ---- */
+.md-typeset blockquote {
+  border-left: 3px solid var(--rl-accent);
+  color: var(--rl-muted);
+  background: color-mix(in srgb, var(--rl-accent) 5%, transparent);
+  border-radius: 0 10px 10px 0;
+  padding: .2rem 1rem;
+}
+
+/* ---- Tables: soft, rounded, readable ---- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--rl-hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: .82rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--md-code-bg-color);
+  font-weight: 600;
+  color: var(--rl-ink);
+}
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th { border: none; border-bottom: 1px solid var(--rl-hairline); }
+
+/* ---- Screenshots: framed, soft, click-to-zoom ---- */
 .md-typeset img {
-  border: 1px solid var(--rl-zinc-800);
-  border-radius: 8px;
+  border: 1px solid var(--rl-hairline);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(16,16,20,.06);
   cursor: zoom-in;
 }
 
-/* Footer: quiet, single line */
-.md-footer-meta { font-size: 0.72rem; }
-.md-footer-copyright { opacity: 0.85; }
+/* ---- Ordered lists: readable numbering ---- */
+.md-typeset ol li::marker { color: var(--rl-muted); font-weight: 600; }
 
-/* Bracket logo sits tight next to the title */
-.md-header__button.md-logo img { height: 1.4rem; width: auto; }
+/* ---- Footer: quiet single line ---- */
+.md-footer-meta { font-size: .72rem; }
+.md-footer-copyright { opacity: .82; }
+
+/* ---- Table of contents (right rail): quiet ---- */
+.md-nav--secondary .md-nav__title { font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }

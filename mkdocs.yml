@@ -24,24 +24,23 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: grey
-      toggle:
-        icon: material/weather-sunny
-        name: Світла тема
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: black
       accent: grey
       toggle:
         icon: material/weather-night
         name: Темна тема
+    - scheme: slate
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/weather-sunny
+        name: Світла тема
   features:
     - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
+    - navigation.sections
     - navigation.top
     - navigation.footer
     - toc.follow
@@ -49,6 +48,17 @@ theme:
     - content.action.edit
     - search.suggest
     - search.highlight
+
+nav:
+  - Початок:
+      - Вступ: index.md
+      - Швидкий старт: quick-start.md
+  - Робота асистента:
+      - Сценарії: scenarios.md
+      - Регулярні задачі: schedule.md
+  - Більше:
+      - Ідеї на майбутнє: future.md
+      - Про нас: about.md
 
 plugins:
   - search
