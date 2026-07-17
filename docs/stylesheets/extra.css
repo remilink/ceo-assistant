@@ -30,8 +30,8 @@
   --md-accent-fg-color:         var(--rl-accent-2);
   --md-code-bg-color:           var(--rl-code-bg);
   --md-code-fg-color:           #34343B;
-  --md-primary-fg-color:        #0B0B0D;
-  --md-primary-bg-color:        #FAFAFA;
+  --md-primary-fg-color:        #FBFAF9;   /* light header, blends with page */
+  --md-primary-bg-color:        #1A1A1E;   /* header text/icons: ink */
 }
 
 /* ---- Dark (slate): Remilink night ---- */
@@ -62,15 +62,33 @@
   --md-footer-bg-color--dark:   #070708;
 }
 
-/* Header + footer: Remilink blue chrome, in both schemes */
-.md-header { background: var(--rl-blue) !important; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+/* Header: clean, seamless with the page, hairline border (GitBook) */
+.md-header {
+  background: var(--md-primary-fg-color) !important;
+  color: var(--md-primary-bg-color);
+  box-shadow: none;
+  border-bottom: 1px solid var(--rl-hairline);
+}
+/* Footer: Remilink blue, both schemes */
 .md-footer { background: var(--rl-blue) !important; }
+
+/* Search field: quiet inset that suits a light header */
+.md-search__form {
+  background: var(--rl-code-bg);
+  border: 1px solid var(--rl-hairline);
+  border-radius: 8px;
+  box-shadow: none;
+}
+.md-search__form:hover { background: var(--rl-code-bg); border-color: var(--rl-hairline-2); }
+.md-search__input { color: var(--rl-ink); }
+.md-search__input::placeholder { color: var(--rl-muted); }
+.md-search__icon { color: var(--rl-muted); }
 .md-header__title { font-family: var(--rl-font-display); font-weight: 600; }
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg { height: 1.5rem; width: auto; }
 
 /* ---- Typography ---- */
-.md-typeset { font-size: .85rem; line-height: 1.75; }
+.md-typeset { font-size: .76rem; line-height: 1.7; }
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
   font-family: var(--rl-font-display);
   font-weight: 600;
@@ -78,14 +96,14 @@
   color: var(--rl-ink);
 }
 .md-typeset h1 {
-  font-size: 2.05rem; font-weight: 700; letter-spacing: -.025em;
-  margin: .2rem 0 1.3rem; line-height: 1.15;
+  font-size: 1.68rem; font-weight: 700; letter-spacing: -.025em;
+  margin: .2rem 0 1rem; line-height: 1.18;
 }
 .md-typeset h2 {
-  font-size: 1.4rem; margin-top: 2.6rem; padding-bottom: .45rem;
+  font-size: 1.18rem; margin-top: 2.2rem; padding-bottom: .4rem;
   border-bottom: 1px solid var(--rl-hairline);
 }
-.md-typeset h3 { font-size: 1.1rem; margin-top: 1.7rem; }
+.md-typeset h3 { font-size: 1rem; margin-top: 1.5rem; }
 .md-typeset p, .md-typeset li { color: var(--md-typeset-color); }
 
 /* Links: colored, underline only on hover (GitBook style) */
@@ -127,7 +145,7 @@
 .md-typeset .highlight pre,
 .md-typeset .highlight code { background: transparent; }
 .md-typeset pre > code {
-  padding: 1rem 1.15rem; font-size: .78rem; line-height: 1.65;
+  padding: .9rem 1.05rem; font-size: .72rem; line-height: 1.6;
   white-space: pre-wrap;      /* prompts wrap instead of scrolling — читабельніше */
   overflow-wrap: anywhere;
 }
@@ -228,9 +246,9 @@
    Header + sidebar chrome (Remilink / GitBook)
    =================================================================== */
 
-/* Header: quiet brand bar; drop the dev-ish repo star/fork widget */
-.md-header { box-shadow: none; border-bottom: 1px solid rgba(255,255,255,.09); }
-.md-header__title { font-size: .92rem; letter-spacing: -.01em; }
+/* Header: quiet bar; drop the dev-ish repo star/fork widget */
+.md-header { box-shadow: none; border-bottom: 1px solid var(--rl-hairline); }
+.md-header__title { font-size: .82rem; font-weight: 700; letter-spacing: -.01em; }
 .md-header__source { display: none; }
 /* Remove the logo mark — the wordmark stays (once, in the header) */
 .md-header__button.md-logo,

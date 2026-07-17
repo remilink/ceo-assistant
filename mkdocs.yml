@@ -53,8 +53,18 @@ nav:
   - Початок:
       - Вступ: index.md
       - Швидкий старт: quick-start.md
-  - Робота асистента:
-      - Сценарії: scenarios.md
+  - Сценарії:
+      - Огляд: scenarios/index.md
+      - Ранковий бриф CEO: scenarios/rankovyi-bryf.md
+      - Підсумок тижня: scenarios/pidsumok-tyzhnia.md
+      - Моніторинг конкурентів: scenarios/monitoryng-konkurentiv.md
+      - Моніторинг новин про компанію: scenarios/monitoryng-novyn.md
+      - Оновлення звіту на Google Drive: scenarios/onovlennia-zvitu.md
+      - Досьє клієнта: scenarios/dosie-kliienta.md
+      - Чернетка листа: scenarios/chernetka-lysta.md
+      - Відкриті домовленості: scenarios/vidkryti-domovlenosti.md
+      - Підготовка до зустрічі: scenarios/pidgotovka-do-zustrichi.md
+  - Автоматизація:
       - Регулярні задачі: schedule.md
   - Більше:
       - Ідеї на майбутнє: future.md
