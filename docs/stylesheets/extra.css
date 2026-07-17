@@ -72,6 +72,11 @@
 /* Footer: Remilink blue, both schemes */
 .md-footer { background: var(--rl-blue) !important; }
 
+/* Sticky footer: keep it pinned to the viewport bottom on short pages,
+   so its position does not jump when navigating between scenario pages. */
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.md-container { flex-grow: 1; }
+
 /* Search field: quiet inset that suits a light header */
 .md-search__form {
   background: var(--rl-code-bg);
