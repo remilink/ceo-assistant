@@ -281,8 +281,9 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 .md-footer a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: .15em; }
 .md-footer-copyright a:hover,
 .md-footer a:hover { color: #fff; }
-/* Copyright strip: darker shade of the brand blue for depth */
-.md-footer-meta { background: #16296B; }
+/* Footer is now a single slim copyright strip (prev/next nav removed) */
+.md-footer-meta { background: var(--rl-blue); }
+.md-footer-meta__inner { padding-top: .7rem; padding-bottom: .7rem; }
 
 /* Sidebar: a real rail with a soft active pill (GitBook feel) */
 @media screen and (min-width: 76.25em) {
