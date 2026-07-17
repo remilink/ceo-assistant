@@ -1,0 +1,93 @@
+site_name: AI-асистент CEO
+site_url: https://remilink.github.io/ceo-assistant/
+site_description: Готові промпти та сценарії, як перетворити ChatGPT або Claude на персонального асистента CEO — з доступом до пошти, календаря, CRM і документів.
+site_author: Remilink
+copyright: >
+  Зроблено <a href="https://remilink.com" target="_blank" rel="noopener">Remilink</a> —
+  AI-native доставка, яку ведуть senior AI-архітектори ·
+  <a href="mailto:hello@remilink.com">hello@remilink.com</a> ·
+  <a href="https://remilink.com/book-a-call" target="_blank" rel="noopener">Feasibility Call</a>
+
+repo_url: https://github.com/remilink/ceo-assistant
+repo_name: remilink/ceo-assistant
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: uk
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  custom_dir: overrides
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/weather-sunny
+        name: Світла тема
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/weather-night
+        name: Темна тема
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: fade
+      draggable: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: false
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://remilink.com
+      name: remilink.com
+    - icon: fontawesome/solid/envelope
+      link: mailto:hello@remilink.com
+      name: hello@remilink.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/remilink
+      name: GitHub
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css

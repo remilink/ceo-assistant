@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" font-family="Inter, Arial, sans-serif">
+  <rect width="1200" height="760" rx="18" fill="#09090b"/>
+  <rect x="1" y="1" width="1198" height="758" rx="18" fill="none" stroke="#27272a"/>
+  <!-- header -->
+  <path d="M46 40h-14v40h14" stroke="#fafafa" stroke-width="4" fill="none" stroke-linecap="square"/>
+  <path d="M70 40h14v40h-14" stroke="#fafafa" stroke-width="4" fill="none" stroke-linecap="square"/>
+  <text x="112" y="70" fill="#fafafa" font-size="30" font-weight="700">Ранковий бриф CEO</text>
+  <text x="1154" y="66" fill="#71717a" font-size="22" text-anchor="end">Пн · 08:00</text>
+  <line x1="32" y1="104" x2="1168" y2="104" stroke="#27272a"/>
+  <!-- section: важливе -->
+  <text x="32" y="150" fill="#a1a1aa" font-size="18" letter-spacing="2">ВАЖЛИВЕ СЬОГОДНІ</text>
+  <circle cx="42" cy="188" r="6" fill="#fafafa"/>
+  <text x="62" y="195" fill="#e4e4e7" font-size="23">Лист від ключового клієнта: чекає рішення щодо продовження контракту</text>
+  <circle cx="42" cy="228" r="6" fill="#fafafa"/>
+  <text x="62" y="235" fill="#e4e4e7" font-size="23">Зустріч 11:00 — демо для інвестора, підготовки поки немає</text>
+  <!-- section: ризики -->
+  <text x="32" y="296" fill="#a1a1aa" font-size="18" letter-spacing="2">РИЗИКИ</text>
+  <circle cx="42" cy="334" r="6" fill="#f87171"/>
+  <text x="62" y="341" fill="#e4e4e7" font-size="23">Угода «Acme» без відповіді 6 днів — ризик зриву дедлайну</text>
+  <!-- section: кому написати -->
+  <text x="32" y="402" fill="#a1a1aa" font-size="18" letter-spacing="2">КОМУ НАПИСАТИ / FOLLOW-UP</text>
+  <circle cx="42" cy="440" r="6" fill="#fafafa"/>
+  <text x="62" y="447" fill="#e4e4e7" font-size="23">CFO — обіцяли цифри по бюджету ще у пʼятницю</text>
+  <circle cx="42" cy="480" r="6" fill="#fafafa"/>
+  <text x="62" y="487" fill="#e4e4e7" font-size="23">Партнер N — узгодити дату наступного дзвінка</text>
+  <!-- section: рішення -->
+  <text x="32" y="548" fill="#a1a1aa" font-size="18" letter-spacing="2">РІШЕННЯ, ЯКІ ЧЕКАЮТЬ ВІД ВАС</text>
+  <circle cx="42" cy="586" r="6" fill="#fafafa"/>
+  <text x="62" y="593" fill="#e4e4e7" font-size="23">Затвердити оффер кандидату на позицію Head of Sales</text>
+  <!-- footer sources -->
+  <line x1="32" y1="648" x2="1168" y2="648" stroke="#27272a"/>
+  <text x="32" y="692" fill="#71717a" font-size="19">Джерела:  Gmail (12 листів)   ·   Google Calendar (4 зустрічі)   ·   HubSpot (3 угоди)</text>
+  <text x="32" y="722" fill="#52525b" font-size="17">Приклад-макет. Замініть цей файл на реальний скріншот брифу.</text>
+</svg>
