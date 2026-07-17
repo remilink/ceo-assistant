@@ -222,3 +222,36 @@
 
 /* ---- Table of contents (right rail): quiet ---- */
 .md-nav--secondary .md-nav__title { font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ===================================================================
+   Header + sidebar chrome (Remilink / GitBook)
+   =================================================================== */
+
+/* Header: quiet brand bar; drop the dev-ish repo star/fork widget */
+.md-header { box-shadow: none; border-bottom: 1px solid rgba(255,255,255,.09); }
+.md-header__title { font-size: .92rem; letter-spacing: -.01em; }
+.md-header__source { display: none; }
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg { height: 1.55rem; }
+
+/* Sidebar: a real rail with a soft active pill (GitBook feel) */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { border-right: 1px solid var(--rl-hairline); }
+}
+.md-nav--primary > .md-nav__list > .md-nav__item--section { margin-top: 1.2rem; }
+.md-nav--primary > .md-nav__list > .md-nav__item--section:first-child { margin-top: .3rem; }
+a.md-nav__link {
+  border-radius: 8px;
+  padding: .34rem .55rem;
+  margin: .06rem 0;
+  transition: background .12s ease, color .12s ease;
+}
+a.md-nav__link:hover {
+  background: color-mix(in srgb, var(--rl-accent) 8%, transparent);
+  color: var(--rl-accent);
+}
+a.md-nav__link.md-nav__link--active {
+  background: color-mix(in srgb, var(--rl-accent) 12%, transparent);
+  color: var(--rl-accent);
+  font-weight: 600;
+}

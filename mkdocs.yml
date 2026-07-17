@@ -85,6 +85,9 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.magiclink:
+      repo_url_shortener: false
+      social_url_shortener: false
 
 extra:
   social:
