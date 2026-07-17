@@ -6,6 +6,7 @@
 
 :root {
   --rl-font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --rl-blue: #1E3A8A;   /* Remilink blue — header, footer, accent */
 }
 
 /* ---- Light (default): warm paper, ink text, deep-navy accent ---- */
@@ -16,8 +17,8 @@
   --rl-muted:      #6A6A73;
   --rl-hairline:   #EBE8E3;
   --rl-hairline-2: #DED9D1;
-  --rl-accent:     #233876;
-  --rl-accent-2:   #1A2B5C;
+  --rl-accent:     #1E3A8A;
+  --rl-accent-2:   #16306F;
   --rl-code-bg:    #F5F3EF;
 
   --md-default-bg-color:        var(--rl-paper);
@@ -61,9 +62,9 @@
   --md-footer-bg-color--dark:   #070708;
 }
 
-/* Header + footer: always the black brand chrome, in both schemes */
-.md-header { background: #0B0B0D; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
-.md-footer { background: #0B0B0D; }
+/* Header + footer: Remilink blue chrome, in both schemes */
+.md-header { background: var(--rl-blue) !important; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+.md-footer { background: var(--rl-blue) !important; }
 .md-header__title { font-family: var(--rl-font-display); font-weight: 600; }
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg { height: 1.5rem; width: auto; }
@@ -231,8 +232,20 @@
 .md-header { box-shadow: none; border-bottom: 1px solid rgba(255,255,255,.09); }
 .md-header__title { font-size: .92rem; letter-spacing: -.01em; }
 .md-header__source { display: none; }
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg { height: 1.55rem; }
+/* Remove the logo mark — the wordmark stays (once, in the header) */
+.md-header__button.md-logo,
+.md-nav__button.md-logo { display: none; }
+/* Do not repeat the site name in the sidebar on desktop */
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary > .md-nav__title { display: none; }
+}
+/* Footer links legible on blue */
+.md-footer-copyright a,
+.md-footer a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: .15em; }
+.md-footer-copyright a:hover,
+.md-footer a:hover { color: #fff; }
+/* Copyright strip: darker shade of the brand blue for depth */
+.md-footer-meta { background: #16296B; }
 
 /* Sidebar: a real rail with a soft active pill (GitBook feel) */
 @media screen and (min-width: 76.25em) {
