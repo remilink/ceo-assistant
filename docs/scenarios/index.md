@@ -18,7 +18,7 @@
 <tr data-tags="пошта календар CRM"><td><a href="pidsumok-tyzhnia/">📆 Підсумок тижня</a></td><td>Підсумок робочого тижня щоп’ятниці.</td><td><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span></td></tr>
 <tr data-tags="веб"><td><a href="monitoryng-konkurentiv/">🔭 Моніторинг конкурентів</a></td><td>Щотижневі зміни в конкурентів.</td><td><span class="rl-tag">веб</span></td></tr>
 <tr data-tags="пошта веб"><td><a href="monitoryng-novyn/">📰 Моніторинг новин про компанію</a></td><td>Згадки про компанію в медіа й соцмережах.</td><td><span class="rl-tag">пошта</span> <span class="rl-tag">веб</span></td></tr>
-<tr data-tags="CRM документи"><td><a href="onovlennia-zvitu/">📊 Оновлення звіту на Google Drive</a></td><td>Оновлення звіту свіжими даними на Drive.</td><td><span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></td></tr>
+<tr data-tags="CRM документи"><td><a href="onovlennia-zvitu/">📊 Оновлення звіту на диску</a></td><td>Оновлення звіту свіжими даними на диску.</td><td><span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></td></tr>
 <tr data-tags="пошта CRM документи"><td><a href="dosie-kliienta/">🧾 Досьє клієнта</a></td><td>Все про клієнта перед дзвінком.</td><td><span class="rl-tag">пошта</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></td></tr>
 <tr data-tags="пошта CRM"><td><a href="chernetka-lysta/">✉️ Чернетка листа</a></td><td>Чернетка відповіді або листа (без надсилання).</td><td><span class="rl-tag">пошта</span> <span class="rl-tag">CRM</span></td></tr>
 <tr data-tags="пошта календар CRM"><td><a href="vidkryti-domovlenosti/">🔗 Відкриті домовленості</a></td><td>Невиконані обіцянки й дедлайни, що висять.</td><td><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span></td></tr>
@@ -27,4 +27,5 @@
 </table>
 </div>
 
+Ви підключаєте власні інструменти — ми показуємо лише напрям (пошта, календар, CRM…).
 Що саме відкриває кожне джерело — див. [Швидкий старт](../quick-start.md).
