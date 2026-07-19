@@ -267,10 +267,15 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
    Interactive Scenarios app (two-pane) + Ideas cards
    =================================================================== */
 
-/* Give this page more room (ToC is hidden on it) */
-.md-main__inner:has(.rl-app) { max-width: 72rem; }
+/* Full-width content across the whole site: no right-hand ToC, stretch to edge */
+.md-sidebar--secondary { display: none !important; }
+.md-main__inner.md-grid { max-width: none; }
+@media screen and (min-width: 76.25em) {
+  .md-content { max-width: none; }
+  .md-content__inner { margin-right: 1.4rem; }
+}
 
-.rl-prompts { display: none !important; }
+.rl-prompts, .rl-details { display: none !important; }
 
 .rl-app {
   display: grid;
@@ -367,6 +372,16 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 .rl-viewer__pre::-webkit-scrollbar { width: 8px; }
 .rl-viewer__pre::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--rl-muted) 40%, transparent); border-radius: 4px; }
 
+/* Detail viewer (Skills): rich HTML instead of a prompt */
+.rl-viewer__detail { padding: 1rem 1.2rem; max-height: calc(100vh - 11rem); overflow: auto; }
+.md-typeset .rl-viewer__detail > :first-child { margin-top: 0; }
+.md-typeset .rl-viewer__detail p { font-size: .78rem; }
+.md-typeset .rl-viewer__detail h4 { font-size: .84rem; margin: 1.1rem 0 .35rem; padding: 0; border: 0; }
+.md-typeset .rl-viewer__detail ul { margin: .3rem 0 .6rem; }
+.md-typeset .rl-viewer__detail li { font-size: .77rem; }
+.md-typeset .rl-viewer__detail pre > code { font-size: .7rem; }
+.rl-viewer__detail .rl-tag { margin-bottom: .5rem; }
+
 /* --- Mobile: stack, viewer below, not sticky --- */
 @media screen and (max-width: 76.1875em) {
   .rl-app { grid-template-columns: 1fr; gap: 1rem; }
@@ -397,8 +412,11 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 .rl-idea__chevron::before { content: "⌄"; font-size: 1rem; line-height: 1; display: block; }
 .rl-idea__head[aria-expanded="true"] .rl-idea__chevron { transform: rotate(180deg); color: var(--rl-accent); }
 .rl-idea__body { padding: 0 .95rem 1rem; }
-.md-typeset .rl-idea__desc { margin: .2rem 0 .7rem; font-size: .78rem; color: var(--md-typeset-color); }
-.rl-idea__tags { margin-top: .2rem; }
+.md-typeset .rl-idea__desc { margin: .2rem 0 .55rem; font-size: .78rem; color: var(--md-typeset-color); }
+.md-typeset .rl-idea__ex,
+.md-typeset .rl-idea__out { margin: .1rem 0 .45rem; font-size: .76rem; color: var(--md-default-fg-color--light); }
+.rl-idea__ex strong, .rl-idea__out strong { color: var(--rl-ink); }
+.rl-idea__tags { margin-top: .45rem; }
 
 /* ===================================================================
    Home: before/after (Точка А / Точка Б) + config bridge

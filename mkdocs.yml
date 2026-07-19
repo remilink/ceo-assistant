@@ -51,13 +51,13 @@ theme:
 nav:
   - Головна: index.md
   - Готові сценарії: scenarios/index.md
+  - Скіли: skills.md
   - Ідеї доручень: ideas.md
   - Налаштування:
       - Плагіни (конектори): plugins.md
-      - Скіли: skills.md
       - Регулярні задачі: schedule.md
       - Робота за комп'ютером: cowork.md
-  - Керування з мобільного: mobile.md
+      - Керування з мобільного: mobile.md
   - Про нас: about.md
 
 plugins:
