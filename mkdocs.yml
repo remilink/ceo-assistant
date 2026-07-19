@@ -1,6 +1,6 @@
-site_name: AI-асистент CEO
+site_name: Асистенти керівника
 site_url: https://ceo-assistant.remilink.com/
-site_description: Готові промпти та сценарії, як перетворити ChatGPT або Claude на персонального асистента CEO — з доступом до пошти, календаря, CRM і документів.
+site_description: Агенти-асистенти для щоденної рутини керівника — готові промпти, сценарії та налаштування, щоб ChatGPT або Claude працювали з вашою поштою, календарем, CRM і документами.
 site_author: Remilink
 copyright: >
   Зроблено в <a href="https://remilink.com" target="_blank" rel="noopener">Remilink</a> —
@@ -49,25 +49,16 @@ theme:
     - search.highlight
 
 nav:
-  - Початок:
-      - Вступ: index.md
-      - Швидкий старт: quick-start.md
-  - Сценарії:
-      - Огляд: scenarios/index.md
-      - Ранковий бриф CEO: scenarios/rankovyi-bryf.md
-      - Підсумок тижня: scenarios/pidsumok-tyzhnia.md
-      - Моніторинг конкурентів: scenarios/monitoryng-konkurentiv.md
-      - Моніторинг новин про компанію: scenarios/monitoryng-novyn.md
-      - Оновлення звіту на диску: scenarios/onovlennia-zvitu.md
-      - Досьє клієнта: scenarios/dosie-kliienta.md
-      - Чернетка листа: scenarios/chernetka-lysta.md
-      - Відкриті домовленості: scenarios/vidkryti-domovlenosti.md
-      - Підготовка до зустрічі: scenarios/pidgotovka-do-zustrichi.md
-  - Автоматизація:
+  - Головна: index.md
+  - Готові сценарії: scenarios/index.md
+  - Ідеї доручень: ideas.md
+  - Налаштування:
+      - Плагіни (конектори): plugins.md
+      - Скіли: skills.md
       - Регулярні задачі: schedule.md
-  - Більше:
-      - Ідеї на майбутнє: future.md
-      - Про нас: about.md
+      - Робота за комп'ютером: cowork.md
+  - Керування з мобільного: mobile.md
+  - Про нас: about.md
 
 plugins:
   - search
@@ -76,6 +67,21 @@ plugins:
       loop: false
       effect: fade
       draggable: true
+  # 301 old paths to their consolidated homes (scenarios folded into one page;
+  # quick-start → plugins; future roadmap → ideas). True renames, per site hygiene.
+  - redirects:
+      redirect_maps:
+        quick-start.md: plugins.md
+        future.md: ideas.md
+        scenarios/rankovyi-bryf.md: scenarios/index.md
+        scenarios/pidsumok-tyzhnia.md: scenarios/index.md
+        scenarios/monitoryng-konkurentiv.md: scenarios/index.md
+        scenarios/monitoryng-novyn.md: scenarios/index.md
+        scenarios/onovlennia-zvitu.md: scenarios/index.md
+        scenarios/dosie-kliienta.md: scenarios/index.md
+        scenarios/chernetka-lysta.md: scenarios/index.md
+        scenarios/vidkryti-domovlenosti.md: scenarios/index.md
+        scenarios/pidgotovka-do-zustrichi.md: scenarios/index.md
 
 markdown_extensions:
   - admonition
@@ -115,4 +121,4 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/scenarios-filter.js
+  - javascripts/rl-interactive.js

@@ -1,2 +1,5 @@
 mkdocs-material>=9.5.0
 mkdocs-glightbox>=0.4.0
+# Pinned: 1.2.3 pulls in the unrelated "properdocs" package, which injects
+# promotional spam into the build. 1.2.2 depends only on mkdocs.
+mkdocs-redirects==1.2.2
