@@ -149,18 +149,66 @@
     apply();
   }
 
-  // Ideas page: expandable cards + tag filter (no viewer).
+  // Ideas page: expandable cards with their example and outcome in a right pane.
   function initIdeas(root) {
     var cards = Array.prototype.slice.call(root.querySelectorAll('.rl-idea'));
+    var viewer = root.querySelector('[data-rl-ideas-viewer]');
+    var vEmpty = viewer && viewer.querySelector('.rl-ideas-viewer__empty');
+    var vContent = viewer && viewer.querySelector('.rl-ideas-viewer__content');
+    var vTitle = viewer && viewer.querySelector('.rl-ideas-viewer__title');
+    var vDetail = viewer && viewer.querySelector('.rl-ideas-viewer__detail');
+    var isMobile = function () { return window.matchMedia('(max-width: 76.1875em)').matches; };
+
+    function clearViewer() {
+      if (!viewer) return;
+      vEmpty.hidden = false;
+      vContent.hidden = true;
+      vDetail.replaceChildren();
+    }
+    function select(card, skipScroll) {
+      if (!viewer) return;
+      var title = card.querySelector('.rl-idea__title');
+      var emoji = card.querySelector('.rl-idea__emoji');
+      vTitle.textContent = (emoji ? emoji.textContent + '  ' : '') + (title ? title.textContent : '');
+      var fragment = document.createDocumentFragment();
+      ['.rl-idea__ex', '.rl-idea__out'].forEach(function (selector) {
+        var source = card.querySelector(selector);
+        if (source) fragment.appendChild(source.cloneNode(true));
+      });
+      vDetail.replaceChildren(fragment);
+      vEmpty.hidden = true;
+      vContent.hidden = false;
+      if (!skipScroll && isMobile()) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function openCard(card, skipScroll) {
+      cards.forEach(function (other) {
+        var otherHead = other.querySelector('.rl-idea__head');
+        var otherBody = other.querySelector('.rl-idea__body');
+        otherHead.setAttribute('aria-expanded', 'false');
+        otherBody.hidden = true;
+        other.classList.remove('is-open');
+      });
+      var head = card.querySelector('.rl-idea__head');
+      var body = card.querySelector('.rl-idea__body');
+      head.setAttribute('aria-expanded', 'true');
+      body.hidden = false;
+      card.classList.add('is-open');
+      select(card, skipScroll);
+    }
     cards.forEach(function (card) {
       var head = card.querySelector('.rl-idea__head');
       var body = card.querySelector('.rl-idea__body');
       if (!head || !body) return;
       head.addEventListener('click', function () {
         var open = head.getAttribute('aria-expanded') === 'true';
-        head.setAttribute('aria-expanded', open ? 'false' : 'true');
-        body.hidden = open;
-        card.classList.toggle('is-open', !open);
+        if (open) {
+          head.setAttribute('aria-expanded', 'false');
+          body.hidden = true;
+          card.classList.remove('is-open');
+          clearViewer();
+        } else {
+          openCard(card, false);
+        }
       });
     });
     var chips = Array.prototype.slice.call(root.querySelectorAll('.rl-filter .rl-chip'));

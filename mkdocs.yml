@@ -1,12 +1,12 @@
-site_name: Асистенти керівника
+site_name: AI асистент керівника для щоденних задач
 site_url: https://ceo-assistant.remilink.com/
 site_description: Агенти-асистенти для щоденної рутини керівника — готові промпти, сценарії та налаштування, щоб ChatGPT або Claude працювали з вашою поштою, календарем, CRM і документами.
-site_author: Remilink
+site_author: remilink
 copyright: >
-  Зроблено в <a href="https://remilink.com" target="_blank" rel="noopener">Remilink</a> —
-  доводимо AI-проєкти до продакшену ·
+  Зроблено в <a href="https://remilink.com/ua" target="_blank" rel="noopener">remilink</a>.
+  Доводимо AI-проєкти до продакшену ·
   <a href="mailto:hello@remilink.com">hello@remilink.com</a> ·
-  <a href="https://remilink.com/book-a-call" target="_blank" rel="noopener">Feasibility Call</a>
+  <a href="https://remilink.com/ua/book-a-call" target="_blank" rel="noopener">Feasibility Call</a>
 
 repo_url: https://github.com/remilink/ceo-assistant
 repo_name: remilink/ceo-assistant
@@ -109,14 +109,23 @@ extra:
   homepage: https://remilink.com/ua
   social:
     - icon: fontawesome/solid/globe
-      link: https://remilink.com
+      link: https://remilink.com/ua
       name: remilink.com
     - icon: fontawesome/solid/envelope
       link: mailto:hello@remilink.com
       name: hello@remilink.com
-    - icon: fontawesome/brands/github
-      link: https://github.com/remilink
-      name: GitHub
+    - icon: fontawesome/solid/phone
+      link: tel:+380961122025
+      name: +380 96 112 20 25
+    - icon: fontawesome/brands/whatsapp
+      link: https://wa.me/380961122025
+      name: WhatsApp
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/remilink_hello
+      name: Telegram
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/remilink/
+      name: LinkedIn
   generator: false
 
 extra_css:
