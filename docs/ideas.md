@@ -18,6 +18,7 @@
 <button class="rl-chip" type="button" data-tag="документи">документи</button>
 <button class="rl-chip" type="button" data-tag="веб">веб</button>
 </div>
+<div class="rl-ideas__app">
 <ul class="rl-ideas__list">
 <li class="rl-idea" data-tags="продажі аналітика задачі">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-sales"><span class="rl-idea__emoji" aria-hidden="true">💹</span><span class="rl-idea__title">Зведення продажів у Slack щопонеділка</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
@@ -47,11 +48,11 @@
 </div>
 </li>
 <li class="rl-idea" data-tags="розробка аналітика">
-<button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-dev"><span class="rl-idea__emoji" aria-hidden="true">🛠️</span><span class="rl-idea__title">Що відбувається в розробці</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
+<button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-dev"><span class="rl-idea__emoji" aria-hidden="true">🛠️</span><span class="rl-idea__title">GitHub: що відбувається в розробці</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-dev" hidden>
-<p class="rl-idea__desc">Підключення до GitHub з оглядом того, що відбувається на боці розробки: що зроблено за тиждень, які релізи й пул-реквести, де ризики та затримки.</p>
-<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Зроби тижневий огляд нашого GitHub: релізи, відкриті PR, що застрягло, де ризики. Простими словами, без коду.»</p>
-<p class="rl-idea__out"><strong>Що отримаєте:</strong> картину розробки для керівника, без занурення в код.</p>
+<p class="rl-idea__desc">Підключіть GitHub у ChatGPT або Claude. Асистент перегляне репозиторії й пояснить без коду, що команда випустила, які PR чекають на рішення, де робота зупинилася і що може вплинути на строки. Налаштування є в розділі <a href="../plugins/">Плагіни</a>.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Підготуй огляд GitHub за тиждень для CEO: що вийшло в реліз, які PR або задачі застрягли, де ризики для строків. Без технічного жаргону.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> коротку картину розробки, рішення, на які варто звернути увагу, і питання до команди.</p>
 <div class="rl-idea__tags"><span class="rl-tag">розробка</span> <span class="rl-tag">аналітика</span></div>
 </div>
 </li>
@@ -101,6 +102,14 @@
 </div>
 </li>
 </ul>
+<aside class="rl-ideas__viewer" data-rl-ideas-viewer aria-live="polite">
+<div class="rl-ideas-viewer__empty">Розгорніть ідею, щоб побачити приклад запиту та результат.</div>
+<div class="rl-ideas-viewer__content" hidden>
+<div class="rl-ideas-viewer__bar"><span class="rl-ideas-viewer__title"></span></div>
+<div class="rl-ideas-viewer__detail"></div>
+</div>
+</aside>
+</div>
 </div>
 
 Готового промпту тут немає навмисно: ідеї надто різні під конкретні дані. Візьміть формулювання як основу, додайте свій контекст і, якщо задача регулярна, поставте її на [розклад](schedule.md).
