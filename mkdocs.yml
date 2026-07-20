@@ -105,6 +105,8 @@ markdown_extensions:
       social_url_shortener: false
 
 extra:
+  # Header remilink logo links to the main site (top-right brand), not the docs home.
+  homepage: https://remilink.com/ua
   social:
     - icon: fontawesome/solid/globe
       link: https://remilink.com

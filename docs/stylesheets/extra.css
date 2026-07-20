@@ -446,24 +446,31 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
   .rl-ab { grid-template-columns: 1fr; }
 }
 
-/* Home: daily flow (a real sequence, so arrow-chained steps) */
+/* Home: daily flow — horizontal diagram (a real 7-step sequence) */
 .rl-flow { margin: 1.1rem 0 1.5rem; }
-.md-typeset .rl-flow__lead { font-size: .82rem; font-weight: 600; color: var(--rl-ink); margin: 0 0 .8rem; }
-.md-typeset .rl-flow__steps { list-style: none; margin: 0; padding: 0; }
+.md-typeset .rl-flow__lead { font-size: .82rem; font-weight: 600; color: var(--rl-ink); margin: 0 0 .9rem; }
+.md-typeset .rl-flow__steps {
+  list-style: none; margin: 0; padding: 0 0 .4rem;
+  display: flex; flex-wrap: nowrap; align-items: stretch; gap: .95rem;
+  overflow-x: auto;
+}
 .md-typeset .rl-flow__steps > li {
   position: relative;
+  flex: 1 0 0; min-width: 8.2rem;
   border: 1px solid var(--rl-hairline);
-  border-left: 3px solid var(--rl-accent);
+  border-top: 3px solid var(--rl-accent);
   border-radius: 10px;
   background: var(--rl-surface);
-  padding: .5rem .9rem;
-  font-size: .8rem; line-height: 1.4;
-  margin: 0 0 1.3rem;
+  padding: .55rem .7rem;
+  font-size: .72rem; line-height: 1.3;
+  display: flex; align-items: center;
 }
-.md-typeset .rl-flow__steps > li:last-child { margin-bottom: 0; }
 .md-typeset .rl-flow__steps > li:not(:last-child)::after {
-  content: "↓"; position: absolute; left: 1.1rem; bottom: -1.18rem;
-  color: var(--rl-accent); font-size: .95rem; line-height: 1; font-weight: 700;
+  content: "→"; position: absolute; right: -.72rem; top: 50%; transform: translateY(-50%);
+  color: var(--rl-accent); font-size: .9rem; line-height: 1; font-weight: 700; z-index: 1;
+}
+@media screen and (max-width: 59.9em) {
+  .md-typeset .rl-flow__steps > li { flex: 0 0 11rem; }
 }
 
 /* About: CTA to the main site */
@@ -524,20 +531,30 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 .md-header { box-shadow: none; border-bottom: 1px solid var(--rl-hairline); }
 .md-header__title { font-size: .82rem; font-weight: 700; letter-spacing: -.01em; }
 .md-header__source { display: none; }
-/* Remilink brand mark in the logo slot (links home) */
-.rl-brand {
-  font-family: var(--rl-font-display);
-  font-weight: 700;
-  font-size: .86rem;
-  letter-spacing: -.01em;
-  color: var(--rl-accent);
+/* Remilink brand mark: mono wordmark + blue cursor block (matches remilink.com) */
+.rl-logo {
+  display: inline-flex; align-items: baseline; user-select: none;
+  font-family: var(--md-code-font, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: .82rem; font-weight: 600; letter-spacing: -.01em; line-height: 1;
+  color: var(--rl-ink);
 }
-.md-header__button.md-logo { padding: 0; margin-right: 0; }
-/* Divider between the Remilink brand and the product name */
-.md-header__title {
-  border-left: 1px solid var(--rl-hairline);
-  margin-left: .6rem;
-  padding-left: .7rem;
+.rl-logo__cursor {
+  display: inline-block; width: .2em; height: .85em;
+  margin-left: .14em; border-radius: .03em;
+  background: #0D3AFF; vertical-align: -.06em;
+}
+.md-header__button.md-logo { padding: 0; margin: 0; }
+
+/* Desktop header layout: product name left; search then remilink brand to the right */
+@media screen and (min-width: 76.25em) {
+  .md-header__title { order: 1; flex: 1 1 auto; border-left: 0; margin-left: .3rem; padding-left: 0; }
+  form.md-header__option, [data-md-component="palette"] { order: 2; }
+  .md-search { order: 3; margin-left: .2rem; }
+  .md-header__button.md-logo { order: 4; margin-left: .9rem; }
+}
+/* Mobile: logo stays left with a divider before the product name */
+@media screen and (max-width: 76.1875em) {
+  .md-header__title { border-left: 1px solid var(--rl-hairline); margin-left: .55rem; padding-left: .65rem; }
 }
 /* Do not repeat the site name in the sidebar on desktop */
 @media screen and (min-width: 76.25em) {

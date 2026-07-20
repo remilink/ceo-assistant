@@ -6,15 +6,6 @@
 
 ## Як увімкнути
 
-### Claude (Cowork → Scheduled tasks)
-
-1. У Claude Cowork (веб або мобільний застосунок) натисніть **Scheduled** на лівій панелі.
-2. Натисніть **New task** і виберіть **Set up manually**. Або **Create with Claude**, щоб асистент сам сформулював задачу за вашим описом.
-3. Вставте перевірений промпт зі «Сценаріїв», задайте періодичність (щогодини, щодня, щотижня, у робочі дні) і, за потреби, робочу папку.
-4. Збережіть. Задачі виконуються у хмарі, тож комп'ютер може бути вимкнений.
-
-Доступно на платних тарифах (Pro, Max, Team, Enterprise). Офіційне джерело: [Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork).
-
 ### ChatGPT (Scheduled tasks)
 
 1. Відкрийте сторінку **Scheduled** у бічній панелі ChatGPT.
@@ -25,6 +16,15 @@
 Ліміти активних задач залежать від плану, а запуск відбувається не частіше ніж раз на годину. Офіційна довідка: [Scheduled Tasks in ChatGPT](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt).
 
 ![Сторінка Scheduled tasks у ChatGPT: створення задачі та список запланованих запусків](assets/schedule-chatgpt.png)
+
+### Claude (Cowork → Scheduled tasks)
+
+1. У Claude Cowork (веб або мобільний застосунок) натисніть **Scheduled** на лівій панелі.
+2. Натисніть **New task** і виберіть **Set up manually**. Або **Create with Claude**, щоб асистент сам сформулював задачу за вашим описом.
+3. Вставте перевірений промпт зі «Сценаріїв», задайте періодичність (щогодини, щодня, щотижня, у робочі дні) і, за потреби, робочу папку.
+4. Збережіть. Задачі виконуються у хмарі, тож комп'ютер може бути вимкнений.
+
+Доступно на платних тарифах (Pro, Max, Team, Enterprise). Офіційне джерело: [Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork).
 
 ## Готові розклади
 
