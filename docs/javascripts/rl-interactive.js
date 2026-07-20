@@ -45,10 +45,16 @@
   function initApp(root) {
     var mode = root.getAttribute('data-mode') || 'prompt';
     var store = {};
-    if (mode === 'prompt') {
-      root.querySelectorAll('.rl-prompts script[data-prompt]').forEach(function (s) {
-        store[s.getAttribute('data-prompt')] = { raw: s.textContent.trim(), text: null };
+    function addPrompts(source) {
+      source.querySelectorAll('.rl-prompts').forEach(function (container) {
+        var promptRoot = container.tagName === 'TEMPLATE' ? container.content : container;
+        promptRoot.querySelectorAll('script[data-prompt]').forEach(function (s) {
+          store[s.getAttribute('data-prompt')] = { raw: s.textContent.trim(), text: null };
+        });
       });
+    }
+    if (mode === 'prompt') {
+      addPrompts(root);
     } else {
       // Keep the <template> element; clone its parsed content into the viewer
       // (first-party static HTML — cloneNode avoids any innerHTML string parsing).
@@ -116,9 +122,18 @@
       });
     });
 
-    // Prompt mode (Scenarios): open the first card on load so the right pane
-    // shows a full prompt immediately instead of the empty placeholder.
-    if (mode === 'prompt' && cards.length) openCard(cards[0], true);
+    function openInitialPrompt() {
+      var selected = cards.filter(function (card) { return card.getAttribute('data-slug') === current; })[0];
+      openCard(selected || cards[0], true);
+    }
+
+    // The prompt data stays inside an inert template, so it survives Material
+    // instant navigation and can be shown as soon as the card is opened.
+    if (mode === 'prompt' && cards.length) {
+      if (Object.keys(store).length) {
+        openInitialPrompt();
+      }
+    }
 
     if (vCopy) vCopy.addEventListener('click', function () {
       if (!current) return;
@@ -235,12 +250,31 @@
   }
 
   function init() {
-    document.querySelectorAll('.rl-app[data-rl-app]').forEach(initApp);
+    document.querySelectorAll('.rl-app[data-rl-app]').forEach(function (root) {
+      // Material can emit its page-change event before the swapped page has
+      // finished settling. Initialise each DOM instance once, then allow a
+      // later event to pick up a freshly inserted page.
+      if (root._rlInteractiveReady) return;
+      root._rlInteractiveReady = true;
+      initApp(root);
+    });
     var ideas = document.querySelector('.rl-ideas[data-rl-ideas]');
-    if (ideas) initIdeas(ideas);
+    if (ideas && !ideas._rlInteractiveReady) {
+      ideas._rlInteractiveReady = true;
+      initIdeas(ideas);
+    }
   }
 
-  if (window.document$) window.document$.subscribe(init);
-  else if (document.readyState !== 'loading') init();
-  else document.addEventListener('DOMContentLoaded', init);
+  function scheduleInit() {
+    // Defer one frame so the Material instant-navigation swap has completed.
+    if (window.requestAnimationFrame) window.requestAnimationFrame(init);
+    else window.setTimeout(init, 0);
+  }
+
+  // Run for the first full page load as well as for instant navigation.
+  // The original code only relied on document$, which can be missed when this
+  // script is evaluated after Material has emitted its initial event.
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleInit, { once: true });
+  else scheduleInit();
+  if (window.document$) window.document$.subscribe(scheduleInit);
 })();
