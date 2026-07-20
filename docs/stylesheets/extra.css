@@ -445,6 +445,46 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 @media screen and (max-width: 59.9em) {
   .rl-ab { grid-template-columns: 1fr; }
 }
+
+/* Home: daily flow (a real sequence, so arrow-chained steps) */
+.rl-flow { margin: 1.1rem 0 1.5rem; }
+.md-typeset .rl-flow__lead { font-size: .82rem; font-weight: 600; color: var(--rl-ink); margin: 0 0 .8rem; }
+.md-typeset .rl-flow__steps { list-style: none; margin: 0; padding: 0; }
+.md-typeset .rl-flow__steps > li {
+  position: relative;
+  border: 1px solid var(--rl-hairline);
+  border-left: 3px solid var(--rl-accent);
+  border-radius: 10px;
+  background: var(--rl-surface);
+  padding: .5rem .9rem;
+  font-size: .8rem; line-height: 1.4;
+  margin: 0 0 1.3rem;
+}
+.md-typeset .rl-flow__steps > li:last-child { margin-bottom: 0; }
+.md-typeset .rl-flow__steps > li:not(:last-child)::after {
+  content: "↓"; position: absolute; left: 1.1rem; bottom: -1.18rem;
+  color: var(--rl-accent); font-size: .95rem; line-height: 1; font-weight: 700;
+}
+
+/* About: CTA to the main site */
+.rl-cta {
+  border: 1px solid color-mix(in srgb, var(--rl-accent) 22%, var(--rl-hairline));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--rl-accent) 6%, var(--rl-surface));
+  padding: 1rem 1.3rem 1.25rem;
+  margin: 1.8rem 0;
+}
+.md-typeset .rl-cta h3 { margin-top: .3rem; border: 0; padding: 0; font-size: .98rem; }
+.md-typeset .rl-cta > :last-child { margin-bottom: 0; }
+.md-typeset a.rl-cta__btn {
+  display: inline-block; margin-top: .3rem;
+  background: var(--rl-accent); color: #fff;
+  padding: .55rem 1.15rem; border-radius: 9px;
+  font-weight: 600; font-size: .82rem; text-decoration: none;
+  transition: background .13s ease;
+}
+.md-typeset a.rl-cta__btn:hover { background: var(--rl-accent-2); color: #fff; }
+[data-md-color-scheme="slate"] .md-typeset a.rl-cta__btn { color: #0B0B0D; }
 .rl-tag {
   display: inline-block;
   margin: .12rem .18rem .12rem 0;

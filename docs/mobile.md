@@ -17,6 +17,8 @@
 
 Офіційне джерело: [Assign tasks from anywhere](https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork).
 
+![Екран налаштування Dispatch у Claude: доступ до файлів, керування комп'ютером і конектори](assets/dispatch-claude.png)
+
 ## ChatGPT: Work і Scheduled Tasks
 
 У ChatGPT мобільний відповідник складається з двох частин. **ChatGPT Work** — це агент для довших багатокрокових завдань, доступний у застосунку: описуєте завдання, стежите за прогресом і підтверджуєте дії з телефона. **Scheduled Tasks** — це сторінка «Scheduled» у бічній панелі застосунку, де ви створюєте разові, повторювані чи моніторингові задачі. Про завершення приходить push-сповіщення або лист.

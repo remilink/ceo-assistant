@@ -19,7 +19,7 @@ hide:
 </div>
 <ul class="rl-cards">
 <li class="rl-card" data-slug="rankovyi-bryf" data-tags="пошта календар CRM документи">
-<button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-rankovyi-bryf"><span class="rl-card__emoji" aria-hidden="true">☀️</span><span class="rl-card__main"><span class="rl-card__title">Ранковий бриф CEO</span><span class="rl-card__meta">пошта · календар · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
+<button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-rankovyi-bryf"><span class="rl-card__emoji" aria-hidden="true">☀️</span><span class="rl-card__main"><span class="rl-card__title">Щоденний огляд CEO</span><span class="rl-card__meta">пошта · календар · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-rankovyi-bryf" hidden>
 <p class="rl-card__desc">Щоранку ви бачите повну картину дня замість того, щоб вручну гортати пошту, календар і CRM. Асистент показує, що важливо сьогодні, де ризики й нестиковки, кому написати, до якої зустрічі готуватися і які рішення чекають на вас. Кожен висновок має посилання на джерело. У фінансових питаннях він звіряє цифри до першоджерела.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
