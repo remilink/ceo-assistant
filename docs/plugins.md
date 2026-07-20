@@ -19,20 +19,20 @@
 
 Рекомендований базовий набір і те, для чого потрібен кожен плагін.
 
-| Плагін | Для чого |
-| --- | --- |
-| Documents | Читання файлів і вкладень |
-| Gmail / Outlook | Листи, треди, чернетки |
-| Google Calendar / Outlook Calendar | Зустрічі та розклад |
-| Google Drive | Файли й папки в хмарі |
-| Slack / Teams / Zoom | Командні комунікації |
-| HubSpot / Attio / Zoho | Клієнти й угоди (CRM) |
-| GitHub | Стан розробки |
-| Notion | Бази знань і нотатки |
-| Chrome | Дії у браузері |
-| Data Analytics | Аналіз даних і графіки |
-| Presentations | Створення презентацій |
-| Sales | Інструменти продажів |
+| Плагін | Для чого | Джерело |
+| --- | --- | --- |
+| Documents | Читання файлів і вкладень | [OpenAI Help](https://help.openai.com/) |
+| Gmail / Outlook | Листи, треди, чернетки | [Connectors](https://help.openai.com/) |
+| Google Calendar / Outlook Calendar | Зустрічі та розклад | [Connectors](https://help.openai.com/) |
+| Google Drive | Файли й папки в хмарі | [Connectors](https://help.openai.com/) |
+| Slack / Teams / Zoom | Командні комунікації | [Connectors](https://help.openai.com/) |
+| HubSpot / Attio / Zoho | Клієнти й угоди (CRM) | [Connectors](https://help.openai.com/) |
+| GitHub | Стан розробки | [Connectors](https://help.openai.com/) |
+| Notion | Бази знань і нотатки | [Connectors](https://help.openai.com/) |
+| Chrome | Дії у браузері | [ChatGPT-агент](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex) |
+| Data Analytics | Аналіз даних і графіки | [OpenAI Help](https://help.openai.com/) |
+| Presentations | Створення презентацій | [OpenAI Help](https://help.openai.com/) |
+| Sales | Інструменти продажів | [Connectors](https://help.openai.com/) |
 
 ### Як увімкнути в ChatGPT
 
@@ -41,9 +41,7 @@
 3. У чаті натисніть **«+»** або меню інструментів і увімкніть конектор як джерело для цього запиту.
 4. Вбудовані можливості (завантаження файлів і аналіз даних) доступні одразу, вмикати їх не треба.
 
-Частина конекторів працює на платних планах, а в робочих акаунтах їх спершу вмикає адміністратор організації.
-
-Офіційна довідка: [OpenAI Help Center](https://help.openai.com/), розділ «Connectors».
+Частина конекторів працює на платних планах, а в робочих акаунтах їх спершу вмикає адміністратор організації. Кожен рядок таблиці має посилання на офіційну довідку OpenAI.
 
 <!-- Скріншот: екран Settings → Connectors у ChatGPT. Додайте PNG у docs/assets/ і розкоментуйте рядок нижче: -->
 <!-- ![Підключення конектора в ChatGPT](assets/plugins-chatgpt.png) -->

@@ -107,8 +107,8 @@
 
 ## Більше ідей
 
-Офіційні добірки прикладів і промптів від розробників асистентів:
+Приклади застосування та історії компаній, які підкажуть, що ще можна доручити:
 
-- [Бібліотека промптів Anthropic](https://docs.claude.com/en/resources/prompt-library)
-- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
 - [OpenAI Academy — приклади застосування](https://academy.openai.com/)
+- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
+- [ChatGPT для бізнесу — сценарії застосування](https://openai.com/business/)

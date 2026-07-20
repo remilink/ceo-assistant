@@ -73,7 +73,7 @@
     var current = null;
     var isMobile = function () { return window.matchMedia('(max-width: 76.1875em)').matches; };
 
-    function select(card) {
+    function select(card, skipScroll) {
       var slug = card.getAttribute('data-slug');
       current = slug;
       var titleEl = card.querySelector('.rl-card__title');
@@ -87,27 +87,38 @@
       vEmpty.hidden = true;
       vContent.hidden = false;
       cards.forEach(function (c) { c.classList.toggle('is-active', c === card); });
-      if (isMobile()) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!skipScroll && isMobile()) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function openCard(card, skipScroll) {
+      cards.forEach(function (c) {
+        c.querySelector('.rl-card__head').setAttribute('aria-expanded', 'false');
+        var b = c.querySelector('.rl-card__body'); if (b) b.hidden = true;
+        c.classList.remove('is-open');
+      });
+      card.querySelector('.rl-card__head').setAttribute('aria-expanded', 'true');
+      var body = card.querySelector('.rl-card__body'); if (body) body.hidden = false;
+      card.classList.add('is-open');
+      select(card, skipScroll);
     }
 
     cards.forEach(function (card) {
       var head = card.querySelector('.rl-card__head');
-      var body = card.querySelector('.rl-card__body');
       head.addEventListener('click', function () {
         var open = head.getAttribute('aria-expanded') === 'true';
-        cards.forEach(function (c) {
-          c.querySelector('.rl-card__head').setAttribute('aria-expanded', 'false');
-          var b = c.querySelector('.rl-card__body'); if (b) b.hidden = true;
-          c.classList.remove('is-open');
-        });
-        if (!open) {
-          head.setAttribute('aria-expanded', 'true');
-          if (body) body.hidden = false;
-          card.classList.add('is-open');
-          select(card);
+        if (open) {
+          head.setAttribute('aria-expanded', 'false');
+          var b = card.querySelector('.rl-card__body'); if (b) b.hidden = true;
+          card.classList.remove('is-open');
+        } else {
+          openCard(card, false);
         }
       });
     });
+
+    // Prompt mode (Scenarios): open the first card on load so the right pane
+    // shows a full prompt immediately instead of the empty placeholder.
+    if (mode === 'prompt' && cards.length) openCard(cards[0], true);
 
     if (vCopy) vCopy.addEventListener('click', function () {
       if (!current) return;

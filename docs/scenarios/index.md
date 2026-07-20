@@ -108,10 +108,10 @@ hide:
 !!! tip "Виконувати щодня автоматично"
     Щоб задача запускалася сама за розкладом, відкрийте розділ [Регулярні задачі](../schedule.md).
 
-## Більше прикладів
+## Більше промптів
 
-Готові добірки кейсів і промптів від розробників асистентів:
+Бібліотеки готових промптів і гайди з промптингу від розробників асистентів:
 
 - [Бібліотека промптів Anthropic](https://docs.claude.com/en/resources/prompt-library)
-- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
-- [OpenAI Academy — приклади застосування](https://academy.openai.com/)
+- [Приклади промптів OpenAI](https://platform.openai.com/docs/examples)
+- [Гайд з промпт-інжинірингу OpenAI](https://platform.openai.com/docs/guides/prompt-engineering)

@@ -55,9 +55,9 @@ nav:
   - Ідеї доручень: ideas.md
   - Налаштування:
       - Плагіни (конектори): plugins.md
-      - Регулярні задачі: schedule.md
-      - Робота за комп'ютером: cowork.md
-      - Керування з мобільного: mobile.md
+      - Регулярні задачі (scheduled): schedule.md
+      - Керування комп'ютером (cowork): cowork.md
+      - Керування з мобільного (dispatch): mobile.md
   - Про нас: about.md
 
 plugins:
