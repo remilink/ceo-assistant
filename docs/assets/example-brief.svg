@@ -4,7 +4,7 @@
   <!-- header -->
   <path d="M46 40h-14v40h14" stroke="#fafafa" stroke-width="4" fill="none" stroke-linecap="square"/>
   <path d="M70 40h14v40h-14" stroke="#fafafa" stroke-width="4" fill="none" stroke-linecap="square"/>
-  <text x="112" y="70" fill="#fafafa" font-size="30" font-weight="700">Ранковий бриф CEO</text>
+  <text x="112" y="70" fill="#fafafa" font-size="30" font-weight="700">Щоденний огляд CEO</text>
   <text x="1154" y="66" fill="#71717a" font-size="22" text-anchor="end">Пн · 08:00</text>
   <line x1="32" y1="104" x2="1168" y2="104" stroke="#27272a"/>
   <!-- section: важливе -->
@@ -30,5 +30,5 @@
   <!-- footer sources -->
   <line x1="32" y1="648" x2="1168" y2="648" stroke="#27272a"/>
   <text x="32" y="692" fill="#71717a" font-size="19">Джерела:  Пошта (12 листів)   ·   Календар (4 зустрічі)   ·   CRM (3 угоди)</text>
-  <text x="32" y="722" fill="#52525b" font-size="17">Приклад-макет. Замініть цей файл на реальний скріншот брифу.</text>
+  <text x="32" y="722" fill="#52525b" font-size="17">Приклад-макет. Замініть цей файл на реальний скріншот огляду.</text>
 </svg>

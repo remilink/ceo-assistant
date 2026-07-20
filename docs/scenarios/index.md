@@ -5,9 +5,9 @@ hide:
 
 # Готові сценарії
 
-Кожен сценарій — готова задача під роботу CEO. Розгорніть картку, прочитайте, коли він доречний, і скопіюйте промпт однією кнопкою — або відкрийте повний текст праворуч. Фільтруйте за джерелом, яке можна підключити.
+Кожен сценарій закриває конкретну задачу керівника. Відкрийте картку: ліворуч буде опис і те, коли сценарій доречний, а праворуч одразу з'явиться повний промпт, готовий до копіювання. Фільтруйте за джерелом, яке можна підключити.
 
-<div class="rl-app" data-rl-app>
+<div class="rl-app" data-rl-app data-mode="prompt">
 <div class="rl-app__list">
 <div class="rl-filter">
 <button class="rl-chip is-active" type="button" data-tag="">Всі</button>
@@ -19,59 +19,52 @@ hide:
 </div>
 <ul class="rl-cards">
 <li class="rl-card" data-slug="rankovyi-bryf" data-tags="пошта календар CRM документи">
-<button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-rankovyi-bryf"><span class="rl-card__emoji" aria-hidden="true">☀️</span><span class="rl-card__main"><span class="rl-card__title">Ранковий бриф CEO</span><span class="rl-card__meta">пошта · календар · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
+<button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-rankovyi-bryf"><span class="rl-card__emoji" aria-hidden="true">☀️</span><span class="rl-card__main"><span class="rl-card__title">Щоденний огляд CEO</span><span class="rl-card__meta">пошта · календар · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-rankovyi-bryf" hidden>
-<p class="rl-card__desc">Щоранку — повна картина дня замість ручного перегляду пошти, календаря й CRM. Асистент показує, що важливо сьогодні, де ризики й нестиковки, кому написати, до якої зустрічі підготуватися і які рішення чекають від вас. Кожен висновок — із посиланням на джерело; у фінансових питаннях працює у forensic-режимі й звіряє цифри до першоджерела.</p>
+<p class="rl-card__desc">Щоранку ви бачите повну картину дня замість того, щоб вручну гортати пошту, календар і CRM. Асистент показує, що важливо сьогодні, де ризики й нестиковки, кому написати, до якої зустрічі готуватися і які рішення чекають на вас. Кожен висновок має посилання на джерело. У фінансових питаннях він звіряє цифри до першоджерела.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="rankovyi-bryf"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="rankovyi-bryf"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="pidsumok-tyzhnia" data-tags="пошта календар CRM документи">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-pidsumok-tyzhnia"><span class="rl-card__emoji" aria-hidden="true">📆</span><span class="rl-card__main"><span class="rl-card__title">Підсумок тижня</span><span class="rl-card__meta">пошта · календар · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-pidsumok-tyzhnia" hidden>
-<p class="rl-card__desc">Щоп'ятниці — підсумок робочого тижня: що зроблено й закрито, ключові перемоги, що зсунулось у часі, які обіцянки лишились відкритими і на що звернути увагу далі. З доказами: джерела, дати, цифри.</p>
+<p class="rl-card__desc">Щоп'ятниці ви отримуєте підсумок робочого тижня: що зроблено й закрито, ключові перемоги, що зсунулось у часі, які обіцянки лишились відкритими і на що звернути увагу далі. Кожен пункт спирається на джерела, дати й цифри.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="pidsumok-tyzhnia"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="pidsumok-tyzhnia"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="monitoryng-konkurentiv" data-tags="веб">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-monitoryng-konkurentiv"><span class="rl-card__emoji" aria-hidden="true">🔭</span><span class="rl-card__main"><span class="rl-card__title">Моніторинг конкурентів</span><span class="rl-card__meta">веб</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-monitoryng-konkurentiv" hidden>
-<p class="rl-card__desc">Щотижневий огляд змін у конкурентів: запуски, ціни, наймання, партнерства й помітні згадки. Асистент шукає у відкритих джерелах і повертає стислий звіт із посиланнями — без ручного обходу сайтів.</p>
+<p class="rl-card__desc">Щотижневий огляд змін у конкурентів: запуски, ціни, наймання, партнерства й помітні згадки. Асистент шукає у відкритих джерелах і повертає стислий звіт із посиланнями, тож вам не треба щоразу обходити сайти вручну.</p>
 <div class="rl-card__tags"><span class="rl-tag">веб</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="monitoryng-konkurentiv"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="monitoryng-konkurentiv"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="monitoryng-novyn" data-tags="пошта веб">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-monitoryng-novyn"><span class="rl-card__emoji" aria-hidden="true">📰</span><span class="rl-card__main"><span class="rl-card__title">Моніторинг новин про компанію</span><span class="rl-card__meta">пошта · веб</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-monitoryng-novyn" hidden>
-<p class="rl-card__desc">Згадки про вашу компанію в медіа й соцмережах: що з'явилось, загальний тон і що потребує реакції. Асистент збирає згадки, відсіює шум і виділяє те, на що варто відповісти.</p>
+<p class="rl-card__desc">Згадки про вашу компанію в медіа й соцмережах: що з'явилось, який загальний тон і що потребує реакції. Асистент збирає згадки, відсіює шум і виділяє те, на що варто відповісти.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">веб</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="monitoryng-novyn"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="monitoryng-novyn"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="onovlennia-zvitu" data-tags="CRM документи">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-onovlennia-zvitu"><span class="rl-card__emoji" aria-hidden="true">📊</span><span class="rl-card__main"><span class="rl-card__title">Оновлення звіту на диску</span><span class="rl-card__meta">CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-onovlennia-zvitu" hidden>
-<p class="rl-card__desc">Регулярно оновлює наявний звіт свіжими даними, зберігаючи його структуру, формули й форматування. Ви відкриваєте той самий файл — уже з актуальними цифрами.</p>
+<p class="rl-card__desc">Регулярно оновлює наявний звіт свіжими даними й зберігає його структуру, формули та форматування. Ви відкриваєте той самий файл, уже з актуальними цифрами.</p>
 <div class="rl-card__tags"><span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="onovlennia-zvitu"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="onovlennia-zvitu"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="dosie-kliienta" data-tags="пошта CRM документи">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-dosie-kliienta"><span class="rl-card__emoji" aria-hidden="true">🧾</span><span class="rl-card__main"><span class="rl-card__title">Досьє клієнта</span><span class="rl-card__meta">пошта · CRM · документи</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-dosie-kliienta" hidden>
-<p class="rl-card__desc">Повне досьє клієнта перед дзвінком чи зустріччю: історія стосунків, угоди, останнє листування, відкриті домовленості, ризики й рекомендований наступний крок — з посиланнями на першоджерела.</p>
+<p class="rl-card__desc">Повне досьє клієнта перед дзвінком чи зустріччю: історія стосунків, угоди, останнє листування, відкриті домовленості, ризики й рекомендований наступний крок. До кожного пункту додаються посилання на першоджерела.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="dosie-kliienta"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="dosie-kliienta"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="chernetka-lysta" data-tags="пошта CRM">
 <button class="rl-card__head" type="button" aria-expanded="false" aria-controls="rl-body-chernetka-lysta"><span class="rl-card__emoji" aria-hidden="true">✉️</span><span class="rl-card__main"><span class="rl-card__title">Чернетка листа</span><span class="rl-card__meta">пошта · CRM</span></span><span class="rl-card__chevron" aria-hidden="true"></span></button>
 <div class="rl-card__body" id="rl-body-chernetka-lysta" hidden>
-<p class="rl-card__desc">Готує чернетку відповіді або нового листа з урахуванням контексту переписки й домовленостей. Нічого не надсилає — лише готує текст на ваше затвердження.</p>
+<p class="rl-card__desc">Готує чернетку відповіді або нового листа з урахуванням контексту переписки й домовленостей. Нічого не надсилає, лише готує текст на ваше затвердження.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">CRM</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="chernetka-lysta"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="chernetka-lysta"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="vidkryti-domovlenosti" data-tags="пошта календар CRM">
@@ -79,7 +72,6 @@ hide:
 <div class="rl-card__body" id="rl-body-vidkryti-domovlenosti" hidden>
 <p class="rl-card__desc">Знаходить невиконані обіцянки й домовленості: хто кому що винен, які дедлайни висять і кому нагадати. Збирає це з пошти, календаря й CRM в один список дій.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="vidkryti-domovlenosti"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="vidkryti-domovlenosti"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 <li class="rl-card" data-slug="pidgotovka-do-zustrichi" data-tags="пошта календар CRM документи">
@@ -87,15 +79,14 @@ hide:
 <div class="rl-card__body" id="rl-body-pidgotovka-do-zustrichi" hidden>
 <p class="rl-card__desc">Готує вас до найближчої зустрічі: контекст і історія з учасниками, порядок денний, пов'язані листи й документи, сильні питання й можливі ризики. Усе, щоб зайти в розмову підготовленим.</p>
 <div class="rl-card__tags"><span class="rl-tag">пошта</span> <span class="rl-tag">календар</span> <span class="rl-tag">CRM</span> <span class="rl-tag">документи</span></div>
-<div class="rl-card__actions"><button class="rl-btn rl-btn--copy" type="button" data-copy="pidgotovka-do-zustrichi"><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button><button class="rl-btn rl-btn--view" type="button" data-view="pidgotovka-do-zustrichi"><span class="rl-btn__label">Дивитись промпт</span></button></div>
 </div>
 </li>
 </ul>
 </div>
 <aside class="rl-app__viewer" data-rl-viewer>
-<div class="rl-viewer__empty">Оберіть сценарій ліворуч і натисніть «Дивитись промпт» — повний текст зʼявиться тут.</div>
+<div class="rl-viewer__empty">Оберіть сценарій ліворуч. Повний промпт зʼявиться тут, звідки його можна скопіювати однією кнопкою.</div>
 <div class="rl-viewer__content" hidden>
-<div class="rl-viewer__bar"><span class="rl-viewer__title"></span><button class="rl-btn rl-btn--copy" type="button" data-copy-current><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати</span></button></div>
+<div class="rl-viewer__bar"><span class="rl-viewer__title"></span><button class="rl-btn rl-btn--copy" type="button" data-copy-current><span class="rl-btn__ico" aria-hidden="true"></span><span class="rl-btn__label">Скопіювати промпт</span></button></div>
 <pre class="rl-viewer__pre"><code class="rl-viewer__code"></code></pre>
 </div>
 </aside>
@@ -112,15 +103,15 @@ hide:
 </div>
 </div>
 
-Ви підключаєте власні інструменти — ми показуємо лише напрям (пошта, календар, CRM…). Що саме відкриває кожне джерело — див. [Плагіни](../plugins.md).
+Ви підключаєте власні інструменти, а ми показуємо лише напрям (пошта, календар, CRM…). Що саме відкриває кожне джерело, описано в розділі [Плагіни](../plugins.md).
 
 !!! tip "Виконувати щодня автоматично"
-    Щоб задача запускалася сама за розкладом — див. розділ [Регулярні задачі](../schedule.md).
+    Щоб задача запускалася сама за розкладом, відкрийте розділ [Регулярні задачі](../schedule.md).
 
-## Більше прикладів
+## Більше промптів
 
-Готові добірки кейсів і промптів від розробників асистентів:
+Бібліотеки готових промптів і гайди з промптингу від розробників асистентів:
 
 - [Бібліотека промптів Anthropic](https://docs.claude.com/en/resources/prompt-library)
-- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
-- [OpenAI Academy — приклади застосування](https://academy.openai.com/)
+- [Приклади промптів OpenAI](https://platform.openai.com/docs/examples)
+- [Гайд з промпт-інжинірингу OpenAI](https://platform.openai.com/docs/guides/prompt-engineering)

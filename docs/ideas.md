@@ -1,6 +1,6 @@
 # Ідеї доручень асистенту
 
-Це приклади доручень, які показують, наскільки далі можна зайти за межі «розумного пошуку». Кожен — точка старту: розгорніть картку, прочитайте ідею й перетворіть її на власний промпт під свої дані. Фільтруйте за темою.
+Це приклади доручень, які показують, наскільки далі можна зайти за межі звичайного пошуку. Беріть будь-який за основу: розгорніть картку, прочитайте ідею й адаптуйте її під свої дані. Фільтруйте за темою.
 
 <div class="rl-ideas" data-rl-ideas>
 <div class="rl-filter">
@@ -22,75 +22,93 @@
 <li class="rl-idea" data-tags="продажі аналітика задачі">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-sales"><span class="rl-idea__emoji" aria-hidden="true">💹</span><span class="rl-idea__title">Зведення продажів у Slack щопонеділка</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-sales" hidden>
-<p class="rl-idea__desc">Наприкінці місяця асистент бере цифри продажів із CRM, зводить їх у таблицю, будує підсумковий графік і викладає у командний канал до понеділка, 9:00. Ви приходите — зведення вже там. Один раз описуєте формат, далі це стає регулярною задачею.</p>
+<p class="rl-idea__desc">Наприкінці місяця асистент бере цифри продажів із CRM, зводить їх у таблицю, будує підсумковий графік і викладає у командний канал до понеділка, 9:00. Ви приходите, а зведення вже там.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Візьми продажі за минулий місяць із CRM, зроби таблицю й підсумковий графік і поклади в канал #sales до понеділка 9:00.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> готову таблицю, графік і короткий підсумок у робочому чаті, без ручного зведення.</p>
 <div class="rl-idea__tags"><span class="rl-tag">продажі</span> <span class="rl-tag">аналітика</span> <span class="rl-tag">задачі</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="документи аналітика">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-doc"><span class="rl-idea__emoji" aria-hidden="true">📄</span><span class="rl-idea__title">Швидкий розбір документа перед виступом</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-doc" hidden>
-<p class="rl-idea__desc">«Відкрий пропозицію в моїх завантаженнях і дай ключові тези — маю 15 хвилин до презентації.» Асистент читає файл (PDF, презентацію, договір) і повертає стислу вижимку: суть, цифри, ризики, відкриті питання. Зручно перед дзвінком, коли часу на повне читання немає.</p>
+<p class="rl-idea__desc">Асистент читає файл із ваших завантажень (PDF, презентацію, договір) і повертає стислу вижимку. Зручно перед дзвінком, коли часу на повне читання немає.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Відкрий пропозицію в моїх завантаженнях і дай ключові тези. Маю 15 хвилин до презентації.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> суть документа, головні цифри, ризики й відкриті питання на пів сторінки.</p>
 <div class="rl-idea__tags"><span class="rl-tag">документи</span> <span class="rl-tag">аналітика</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="задачі аналітика">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-team"><span class="rl-idea__emoji" aria-hidden="true">📋</span><span class="rl-idea__title">Пульс команди з таск-менеджера</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-team" hidden>
-<p class="rl-idea__desc">Підключіть таск-менеджер — асистент підсумує стан команди: скільки задач закрито й за який час, де аномалії, у кого просів темп, що застрягло і на що звернути увагу. Замість ручного перегляду дощок — короткий звіт із фактами.</p>
+<p class="rl-idea__desc">Підключіть таск-менеджер, і асистент підсумує стан команди: скільки задач закрито й за який час, де аномалії, у кого просів темп, що застрягло.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Підсумуй наш таск-менеджер за два тижні: закриті задачі, швидкість, аномалії, у кого просів темп.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> короткий звіт про темп команди замість ручного перегляду дощок.</p>
 <div class="rl-idea__tags"><span class="rl-tag">задачі</span> <span class="rl-tag">аналітика</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="розробка аналітика">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-dev"><span class="rl-idea__emoji" aria-hidden="true">🛠️</span><span class="rl-idea__title">Що відбувається в розробці</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-dev" hidden>
-<p class="rl-idea__desc">Підключення до GitHub з оглядом того, що відбувається на боці розробки: що зроблено за тиждень, які релізи й пул-реквести, де ризики та затримки. Керівнику — картина без занурення в код.</p>
+<p class="rl-idea__desc">Підключення до GitHub з оглядом того, що відбувається на боці розробки: що зроблено за тиждень, які релізи й пул-реквести, де ризики та затримки.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Зроби тижневий огляд нашого GitHub: релізи, відкриті PR, що застрягло, де ризики. Простими словами, без коду.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> картину розробки для керівника, без занурення в код.</p>
 <div class="rl-idea__tags"><span class="rl-tag">розробка</span> <span class="rl-tag">аналітика</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="голос задачі">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-voice"><span class="rl-idea__emoji" aria-hidden="true">🎙️</span><span class="rl-idea__title">Голосові нотатки — у задачі й листи</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-voice" hidden>
-<p class="rl-idea__desc">Наговоріть думки голосом — асистент перетворює їх на задачі, чернетки листів і події в календарі. Зручно між зустрічами: сказали вголос, отримали структуру й готові чернетки на затвердження.</p>
+<p class="rl-idea__desc">Наговоріть думки голосом, і асистент перетворить їх на задачі, чернетки листів і події в календарі. Зручно між зустрічами.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Ось голосова нотатка з наради. Зроби з неї задачі з відповідальними, дві чернетки листів і подію в календарі.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> структуровані задачі, чернетки й події замість розсипаних думок.</p>
 <div class="rl-idea__tags"><span class="rl-tag">голос</span> <span class="rl-tag">задачі</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="конкуренти веб маркетинг">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-site"><span class="rl-idea__emoji" aria-hidden="true">🔍</span><span class="rl-idea__title">Повний розбір сайту конкурента</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-site" hidden>
-<p class="rl-idea__desc">«Зайди на відкритий у мене сайт і зроби повний розбір.» Асистент аналізує сторінку конкурента: офери, гачки, структуру, дизайн і сильні сторони. На виході — розбір, який можна взяти в роботу над власним сайтом.</p>
+<p class="rl-idea__desc">Асистент заходить на відкритий у вас сайт конкурента й розбирає його: офери, гачки, структуру, дизайн і сильні сторони.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Зайди на відкритий у мене сайт і зроби повний розбір: офери, гачки, структура, дизайн, сильні сторони.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> розбір чужої сторінки, який можна взяти в роботу над власним сайтом.</p>
 <div class="rl-idea__tags"><span class="rl-tag">конкуренти</span> <span class="rl-tag">веб</span> <span class="rl-tag">маркетинг</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="контент конкуренти маркетинг">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-yt"><span class="rl-idea__emoji" aria-hidden="true">💬</span><span class="rl-idea__title">Болі аудиторії з коментарів на YouTube</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-yt" hidden>
-<p class="rl-idea__desc">Асистент витягує коментарі під відео конкурента й розбирає їх: які питання ставлять, на що скаржаться, чого бракує. На виході — живі формулювання болю аудиторії, з яких виходять теми контенту та ідеї лідмагнітів. Технічно асистенту може знадобитися інструмент на кшталт yt-dlp — це разове налаштування.</p>
+<p class="rl-idea__desc">Асистент витягує коментарі під відео конкурента й розбирає їх: які питання ставлять, на що скаржаться, чого бракує. Технічно йому може знадобитися інструмент на кшталт yt-dlp, це разове налаштування.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Витягни коментарі під цим відео й згрупуй: питання, скарги, чого людям бракує. Дай живі формулювання.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> живі болі аудиторії, з яких виходять теми контенту та ідеї лідмагнітів.</p>
 <div class="rl-idea__tags"><span class="rl-tag">контент</span> <span class="rl-tag">конкуренти</span> <span class="rl-tag">маркетинг</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="SMM контент маркетинг">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-smm"><span class="rl-idea__emoji" aria-hidden="true">🎬</span><span class="rl-idea__title">Контент для соцмереж: пости, каруселі, відео</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-smm" hidden>
-<p class="rl-idea__desc">Асистент готує контент для соцмереж: пише пости й сценарії каруселей, дизайн каруселей, а для відео — чернетку монтажу. Ви лишаєтесь редактором, а не автором з нуля.</p>
+<p class="rl-idea__desc">Асистент готує контент для соцмереж: пише пости й сценарії каруселей, дизайн каруселей, а для відео готує чернетку монтажу.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Зроби серію з трьох дописів і сценарій каруселі на цю тему, плюс ідею короткого відео.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> готові чернетки постів, каруселей і відео. Ви лишаєтесь редактором.</p>
 <div class="rl-idea__tags"><span class="rl-tag">SMM</span> <span class="rl-tag">контент</span> <span class="rl-tag">маркетинг</span></div>
 </div>
 </li>
 <li class="rl-idea" data-tags="фінанси аналітика">
 <button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-pnl"><span class="rl-idea__emoji" aria-hidden="true">🧮</span><span class="rl-idea__title">Аналіз P&amp;L, що прислали</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-pnl" hidden>
-<p class="rl-idea__desc">Хтось прислав P&amp;L у документі — асистент проводить forensic-розбір: звіряє цифри до першоджерела, перевіряє формули, шукає аномалії й дає висновки з доказами. Не переказ таблиці, а перевірка.</p>
+<p class="rl-idea__desc">Хтось прислав P&amp;L у документі, і асистент проводить forensic-розбір: звіряє цифри до першоджерела, перевіряє формули, шукає аномалії й дає висновки з доказами.</p>
+<p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Ось P&amp;L у документі. Перевір цифри до першоджерела, знайди аномалії й дай висновки з посиланнями.»</p>
+<p class="rl-idea__out"><strong>Що отримаєте:</strong> перевірку з доказами замість переказу таблиці.</p>
 <div class="rl-idea__tags"><span class="rl-tag">фінанси</span> <span class="rl-tag">аналітика</span></div>
 </div>
 </li>
 </ul>
 </div>
 
-Готового промпту тут немає навмисно — ідеї надто різні під конкретні дані. Візьміть формулювання як основу, додайте свій контекст і, якщо задача регулярна, поставте її на [розклад](schedule.md).
+Готового промпту тут немає навмисно: ідеї надто різні під конкретні дані. Візьміть формулювання як основу, додайте свій контекст і, якщо задача регулярна, поставте її на [розклад](schedule.md).
 
 ## Більше ідей
 
-Офіційні добірки прикладів і промптів від розробників асистентів:
+Приклади застосування та історії компаній, які підкажуть, що ще можна доручити:
 
-- [Бібліотека промптів Anthropic](https://docs.claude.com/en/resources/prompt-library)
-- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
 - [OpenAI Academy — приклади застосування](https://academy.openai.com/)
+- [Кейси клієнтів Anthropic](https://www.anthropic.com/customers)
+- [ChatGPT для бізнесу — сценарії застосування](https://openai.com/business/)

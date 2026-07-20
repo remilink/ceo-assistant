@@ -1,6 +1,9 @@
 // Interactive behaviour for the CEO-assistant handbook.
-//  - .rl-app : Scenarios page — accordion cards, one-click copy, right-hand prompt viewer, tag filter.
-//  - .rl-ideas : Ideas page — expandable cards + tag filter (no prompt copy).
+//  .rl-app  — two-pane component used on Scenarios and Skills.
+//    Left: accordion cards. Opening a card selects it and loads its content
+//    into the right-hand viewer. No per-card buttons.
+//    data-mode="prompt": viewer shows a copyable prompt (base64 in <script>).
+//    data-mode="detail": viewer shows rich HTML (from <template data-detail>).
 // Uses Material's document$ so it also runs after instant navigation.
 
 (function () {
@@ -18,14 +21,10 @@
     return new Promise(function (resolve, reject) {
       try {
         var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.setAttribute('readonly', '');
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
+        ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
         resolve();
       } catch (e) { reject(e); }
     });
@@ -43,23 +42,24 @@
     }, 1800);
   }
 
-  function flashError(btn) {
-    var label = btn.querySelector('.rl-btn__label');
-    if (label) { var p = label.textContent; label.textContent = 'Скопіюйте вручну'; setTimeout(function () { label.textContent = p; }, 1800); }
-  }
-
-  // ---- Scenarios app ----
   function initApp(root) {
-    var promptFor = {};
-    root.querySelectorAll('.rl-prompts script[data-prompt]').forEach(function (s) {
-      promptFor[s.getAttribute('data-prompt')] = s.textContent.trim();
-    });
-    function textFor(slug) {
-      if (promptFor[slug] == null) return '';
-      // decode lazily, cache the decoded string
-      if (typeof promptFor[slug] === 'string') promptFor[slug] = { raw: promptFor[slug], text: null };
-      if (promptFor[slug].text == null) promptFor[slug].text = b64ToUtf8(promptFor[slug].raw);
-      return promptFor[slug].text;
+    var mode = root.getAttribute('data-mode') || 'prompt';
+    var store = {};
+    if (mode === 'prompt') {
+      root.querySelectorAll('.rl-prompts script[data-prompt]').forEach(function (s) {
+        store[s.getAttribute('data-prompt')] = { raw: s.textContent.trim(), text: null };
+      });
+    } else {
+      // Keep the <template> element; clone its parsed content into the viewer
+      // (first-party static HTML — cloneNode avoids any innerHTML string parsing).
+      root.querySelectorAll('.rl-details template[data-detail]').forEach(function (t) {
+        store[t.getAttribute('data-detail')] = t;
+      });
+    }
+    function promptText(slug) {
+      var e = store[slug]; if (!e) return '';
+      if (e.text == null) e.text = b64ToUtf8(e.raw);
+      return e.text;
     }
 
     var cards = Array.prototype.slice.call(root.querySelectorAll('.rl-card'));
@@ -68,61 +68,61 @@
     var vContent = viewer.querySelector('.rl-viewer__content');
     var vTitle = viewer.querySelector('.rl-viewer__title');
     var vCode = viewer.querySelector('.rl-viewer__code');
+    var vDetail = viewer.querySelector('.rl-viewer__detail');
     var vCopy = viewer.querySelector('[data-copy-current]');
     var current = null;
+    var isMobile = function () { return window.matchMedia('(max-width: 76.1875em)').matches; };
 
-    // accordion
+    function select(card, skipScroll) {
+      var slug = card.getAttribute('data-slug');
+      current = slug;
+      var titleEl = card.querySelector('.rl-card__title');
+      var emojiEl = card.querySelector('.rl-card__emoji');
+      vTitle.textContent = (emojiEl ? emojiEl.textContent + '  ' : '') + (titleEl ? titleEl.textContent : '');
+      if (mode === 'prompt' && vCode) vCode.textContent = promptText(slug);
+      if (mode === 'detail' && vDetail) {
+        var tpl = store[slug];
+        vDetail.replaceChildren(tpl ? tpl.content.cloneNode(true) : document.createDocumentFragment());
+      }
+      vEmpty.hidden = true;
+      vContent.hidden = false;
+      cards.forEach(function (c) { c.classList.toggle('is-active', c === card); });
+      if (!skipScroll && isMobile()) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function openCard(card, skipScroll) {
+      cards.forEach(function (c) {
+        c.querySelector('.rl-card__head').setAttribute('aria-expanded', 'false');
+        var b = c.querySelector('.rl-card__body'); if (b) b.hidden = true;
+        c.classList.remove('is-open');
+      });
+      card.querySelector('.rl-card__head').setAttribute('aria-expanded', 'true');
+      var body = card.querySelector('.rl-card__body'); if (body) body.hidden = false;
+      card.classList.add('is-open');
+      select(card, skipScroll);
+    }
+
     cards.forEach(function (card) {
       var head = card.querySelector('.rl-card__head');
-      var body = card.querySelector('.rl-card__body');
       head.addEventListener('click', function () {
         var open = head.getAttribute('aria-expanded') === 'true';
-        cards.forEach(function (c) {
-          var h = c.querySelector('.rl-card__head'), b = c.querySelector('.rl-card__body');
-          h.setAttribute('aria-expanded', 'false');
-          b.hidden = true;
-          c.classList.remove('is-open');
-        });
-        if (!open) {
-          head.setAttribute('aria-expanded', 'true');
-          body.hidden = false;
-          card.classList.add('is-open');
+        if (open) {
+          head.setAttribute('aria-expanded', 'false');
+          var b = card.querySelector('.rl-card__body'); if (b) b.hidden = true;
+          card.classList.remove('is-open');
+        } else {
+          openCard(card, false);
         }
       });
     });
 
-    // copy inside cards
-    root.querySelectorAll('.rl-card [data-copy]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        copyText(textFor(btn.getAttribute('data-copy'))).then(function () { flashCopied(btn); }, function () { flashError(btn); });
-      });
-    });
+    // Prompt mode (Scenarios): open the first card on load so the right pane
+    // shows a full prompt immediately instead of the empty placeholder.
+    if (mode === 'prompt' && cards.length) openCard(cards[0], true);
 
-    // view -> render in the right-hand viewer
-    function showViewer(slug, title) {
-      current = slug;
-      vTitle.textContent = title;
-      vCode.textContent = textFor(slug);
-      vEmpty.hidden = true;
-      vContent.hidden = false;
-      cards.forEach(function (c) { c.classList.toggle('is-active', c.getAttribute('data-slug') === slug); });
-      if (window.matchMedia('(max-width: 76.1875em)').matches) {
-        viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-    root.querySelectorAll('.rl-card [data-view]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var card = btn.closest('.rl-card');
-        var title = card.querySelector('.rl-card__title').textContent;
-        var emoji = card.querySelector('.rl-card__emoji');
-        showViewer(btn.getAttribute('data-view'), (emoji ? emoji.textContent + '  ' : '') + title);
-      });
-    });
     if (vCopy) vCopy.addEventListener('click', function () {
       if (!current) return;
-      copyText(textFor(current)).then(function () { flashCopied(vCopy); }, function () { flashError(vCopy); });
+      copyText(promptText(current)).then(function () { flashCopied(vCopy); }, function () {});
     });
 
     // tag filter
@@ -149,7 +149,7 @@
     apply();
   }
 
-  // ---- Ideas page ----
+  // Ideas page: expandable cards + tag filter (no viewer).
   function initIdeas(root) {
     var cards = Array.prototype.slice.call(root.querySelectorAll('.rl-idea'));
     cards.forEach(function (card) {
@@ -187,8 +187,7 @@
   }
 
   function init() {
-    var app = document.querySelector('.rl-app[data-rl-app]');
-    if (app) initApp(app);
+    document.querySelectorAll('.rl-app[data-rl-app]').forEach(initApp);
     var ideas = document.querySelector('.rl-ideas[data-rl-ideas]');
     if (ideas) initIdeas(ideas);
   }
