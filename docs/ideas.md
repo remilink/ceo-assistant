@@ -57,9 +57,9 @@
 </div>
 </li>
 <li class="rl-idea" data-tags="голос задачі">
-<button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-voice"><span class="rl-idea__emoji" aria-hidden="true">🎙️</span><span class="rl-idea__title">Голосові нотатки — у задачі й листи</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
+<button class="rl-idea__head" type="button" aria-expanded="false" aria-controls="idea-voice"><span class="rl-idea__emoji" aria-hidden="true">🎙️</span><span class="rl-idea__title">Хвилинна голосова фіксація після зустрічі</span><span class="rl-idea__chevron" aria-hidden="true"></span></button>
 <div class="rl-idea__body" id="idea-voice" hidden>
-<p class="rl-idea__desc">Наговоріть думки голосом, і асистент перетворить їх на задачі, чернетки листів і події в календарі. Зручно між зустрічами.</p>
+<p class="rl-idea__desc">CEO коротко говорить, що вирішили, а асистент перетворює це на рішення, відповідальних, строки та чернетки follow-up.</p>
 <p class="rl-idea__ex"><strong>Приклад запиту:</strong> «Ось голосова нотатка з наради. Зроби з неї задачі з відповідальними, дві чернетки листів і подію в календарі.»</p>
 <p class="rl-idea__out"><strong>Що отримаєте:</strong> структуровані задачі, чернетки й події замість розсипаних думок.</p>
 <div class="rl-idea__tags"><span class="rl-tag">голос</span> <span class="rl-tag">задачі</span></div>
